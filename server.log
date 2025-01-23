@@ -1,0 +1,474 @@
+2025-01-09T13:20:59.110Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:20:59.128Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:20:59.136Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:20:59.145Z [INFO]: Executing query to fetch unique visitors
+2025-01-09T13:21:42.923Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:21:42.933Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:21:42.939Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:21:42.944Z [INFO]: Executing query to fetch unique visitors
+2025-01-09T13:21:42.960Z [INFO]: Fetched total intents: 9
+2025-01-09T13:21:42.988Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:21:42.992Z [INFO]: Fetched unique visitors: 2
+2025-01-09T13:21:42.996Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:23:47.601Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:23:47.613Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:23:47.618Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:23:47.630Z [INFO]: Fetched total intents: 9
+2025-01-09T13:23:47.650Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:23:47.658Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:23:59.372Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:23:59.374Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:23:59.377Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:23:59.379Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:23:59.381Z [INFO]: Fetched total intents: 9
+2025-01-09T13:23:59.384Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:24:06.917Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:24:06.920Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:24:06.922Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:24:06.925Z [INFO]: Fetched total intents: 9
+2025-01-09T13:24:06.928Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:24:06.932Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:24:12.553Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:24:12.556Z [INFO]: Fetched total intents: 9
+2025-01-09T13:24:12.559Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:24:12.562Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:24:12.565Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:24:12.569Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:24:49.357Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:24:49.360Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:24:49.363Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:24:49.366Z [INFO]: Fetched total intents: 9
+2025-01-09T13:24:49.369Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:24:49.373Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:17.443Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:17.444Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:17.445Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:17.447Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:17.449Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:17.451Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:18.264Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:18.266Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:18.267Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:18.269Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:18.270Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:18.272Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:18.754Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:18.755Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:18.757Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:18.758Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:18.760Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:18.762Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:22.488Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:22.489Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:22.490Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:22.491Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:22.492Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:22.494Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:31.750Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:31.752Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:31.753Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:31.755Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:31.757Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:31.760Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:42.776Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:42.777Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:42.778Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:42.779Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:42.780Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:25:42.782Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:46.966Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:25:46.968Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:25:46.970Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:25:46.973Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:25:46.974Z [INFO]: Fetched total intents: 9
+2025-01-09T13:25:46.976Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:27:12.015Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:27:12.017Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:27:12.019Z [INFO]: Fetched total intents: 9
+2025-01-09T13:27:12.022Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:27:12.027Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:27:12.029Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:27:12.811Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:27:12.813Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:27:12.815Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:27:12.817Z [INFO]: Fetched total intents: 9
+2025-01-09T13:27:12.819Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:27:12.821Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:30:17.839Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:30:17.840Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:30:17.841Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:30:17.842Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:30:17.843Z [INFO]: Fetched total intents: 9
+2025-01-09T13:30:17.844Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:30:57.330Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:30:57.333Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:30:57.335Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:30:57.337Z [INFO]: Fetched total intents: 9
+2025-01-09T13:30:57.338Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:30:57.340Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:31:03.043Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:31:03.044Z [INFO]: Fetched total intents: 9
+2025-01-09T13:31:03.045Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:31:03.047Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:31:03.048Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:31:03.050Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:33:31.195Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:33:31.198Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:33:31.200Z [INFO]: Fetched total intents: 9
+2025-01-09T13:33:31.202Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:33:31.204Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:33:31.205Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:33:45.067Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:33:45.069Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:33:45.071Z [INFO]: Fetched total intents: 9
+2025-01-09T13:33:45.073Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:33:45.075Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:33:45.077Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:07.185Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:07.186Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:07.187Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:07.188Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:07.189Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:07.191Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:07.941Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:07.943Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:07.944Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:07.945Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:07.948Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:07.950Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:11.580Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:11.581Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:11.582Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:11.583Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:11.584Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:11.585Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:36.057Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:36.059Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:36.061Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:36.063Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:36.064Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:36.065Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:44.397Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:44.398Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:44.400Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:44.401Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:44.402Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:44.403Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:56.195Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:56.196Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:56.196Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:56.198Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:56.199Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:56.201Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:34:56.946Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:34:56.948Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:34:56.948Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:34:56.949Z [INFO]: Fetched total intents: 9
+2025-01-09T13:34:56.950Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:34:56.952Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:10.993Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:10.995Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:10.997Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:11.000Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:11.002Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:11.005Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:14.985Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:14.986Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:14.988Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:14.989Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:14.990Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:14.991Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:19.073Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:19.075Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:19.078Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:19.079Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:19.081Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:19.084Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:27.027Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:27.028Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:27.030Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:27.031Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:27.033Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:27.035Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:28.972Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:28.974Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:28.976Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:28.978Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:28.979Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:28.981Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:30.969Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:30.971Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:30.971Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:30.973Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:30.974Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:30.975Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:35.997Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:35.999Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:36.000Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:36.002Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:36.005Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:36.007Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:37.074Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:37.075Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:37.076Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:37.077Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:37.078Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:37.079Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:48.393Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:48.395Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:48.397Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:48.398Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:48.400Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:48.401Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:35:53.880Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:35:53.882Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:35:53.883Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:35:53.884Z [INFO]: Fetched total intents: 9
+2025-01-09T13:35:53.885Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:35:53.886Z [INFO]: Fetched user registrations: 2
+2025-01-09T13:39:20.894Z [INFO]: Executing query to fetch total intents
+2025-01-09T13:39:20.898Z [INFO]: Executing query to fetch available rooms
+2025-01-09T13:39:20.900Z [INFO]: Executing query to fetch user registrations
+2025-01-09T13:39:20.903Z [INFO]: Fetched total intents: 9
+2025-01-09T13:39:20.905Z [INFO]: Fetched available rooms: 3
+2025-01-09T13:39:20.908Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:10:05.414Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:10:06.393Z [INFO]: Fetched total intents: 9
+2025-01-20T23:10:06.393Z [ERROR]: Error fetching total intents: res.json is not a function
+2025-01-20T23:10:47.214Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:10:48.176Z [INFO]: Fetched total intents: 9
+2025-01-20T23:10:48.176Z [ERROR]: Error fetching total intents: res.json is not a function
+2025-01-20T23:10:59.185Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:11:00.306Z [INFO]: Fetched total intents: 9
+2025-01-20T23:11:00.308Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:11:00.494Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:11:00.495Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:11:00.741Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:11:30.308Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:11:31.304Z [INFO]: Fetched total intents: 9
+2025-01-20T23:11:31.305Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:11:31.489Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:11:31.491Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:11:31.701Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:15:50.168Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:15:50.170Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:15:50.173Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:15:50.354Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:15:51.189Z [INFO]: Fetched total intents: 9
+2025-01-20T23:15:51.333Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:15:56.594Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:15:56.597Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:15:56.598Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:15:56.787Z [INFO]: Fetched total intents: 9
+2025-01-20T23:15:56.795Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:15:56.799Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:16:40.120Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:16:40.121Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:16:40.123Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:16:40.312Z [INFO]: Fetched total intents: 9
+2025-01-20T23:16:40.314Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:16:40.318Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:17:09.411Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:17:09.413Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:17:09.414Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:17:09.597Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:17:09.600Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:17:09.602Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:16.542Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:16.543Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:16.545Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:16.733Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:16.742Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:16.747Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:17.480Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:17.481Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:17.483Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:17.669Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:17.671Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:17.697Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:26.402Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:26.404Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:26.406Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:26.586Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:26.589Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:26.592Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:27.361Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:27.363Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:27.364Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:27.548Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:27.549Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:27.551Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:32.771Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:32.774Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:32.775Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:32.967Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:32.973Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:32.976Z [INFO]: Fetched total intents: 9
+2025-01-20T23:18:43.363Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:18:43.364Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:18:43.365Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:18:43.548Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:18:43.551Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:18:43.552Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:01.751Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:01.752Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:01.754Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:01.956Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:01.958Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:01.961Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:06.364Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:06.365Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:06.367Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:06.550Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:06.551Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:06.553Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:11.842Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:11.843Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:11.845Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:12.046Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:12.049Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:12.053Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:21.837Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:21.839Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:21.839Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:22.029Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:22.047Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:22.062Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:26.647Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:26.648Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:26.649Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:26.838Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:26.843Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:26.845Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:32.705Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:32.708Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:32.709Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:32.893Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:32.901Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:32.904Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:43.962Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:43.963Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:43.964Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:44.149Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:44.155Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:44.165Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:57.368Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:57.369Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:57.370Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:57.554Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:19:57.556Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:57.558Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:59.738Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:19:59.739Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:19:59.740Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:19:59.934Z [INFO]: Fetched total intents: 9
+2025-01-20T23:19:59.949Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:19:59.951Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:07.369Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:07.371Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:07.372Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:07.553Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:07.556Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:07.559Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:14.378Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:14.380Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:14.381Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:14.565Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:14.567Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:14.569Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:17.414Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:17.417Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:17.419Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:17.604Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:17.607Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:17.609Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:17.958Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:17.959Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:17.961Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:18.144Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:18.148Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:18.149Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:21.150Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:21.152Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:21.153Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:21.335Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:21.337Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:21.365Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:30.550Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:30.551Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:30.552Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:30.741Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:30.758Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:30.760Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:40.370Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:40.373Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:40.375Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:40.554Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:40.561Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:40.564Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:20:57.399Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:20:57.401Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:20:57.402Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:20:57.583Z [INFO]: Fetched total intents: 9
+2025-01-20T23:20:57.585Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:20:57.587Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:05.032Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:05.033Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:05.034Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:05.215Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:05.222Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:05.224Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:08.210Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:08.212Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:08.213Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:08.396Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:08.399Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:08.400Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:12.452Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:12.453Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:12.455Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:12.638Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:12.640Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:12.641Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:26.585Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:26.586Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:26.587Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:26.773Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:26.775Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:26.803Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:42.369Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:42.371Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:42.372Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:42.555Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:42.556Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:42.558Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:49.383Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:49.385Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:49.387Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:49.581Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:49.584Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:21:49.586Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:50.770Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:21:50.771Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:21:50.772Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:21:50.967Z [INFO]: Fetched total intents: 9
+2025-01-20T23:21:50.988Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:21:50.989Z [INFO]: Fetched user registrations: 2
+2025-01-20T23:54:24.734Z [INFO]: Executing query to fetch total intents
+2025-01-20T23:54:24.741Z [INFO]: Executing query to fetch available rooms
+2025-01-20T23:54:24.744Z [INFO]: Executing query to fetch user registrations
+2025-01-20T23:54:25.052Z [INFO]: Fetched total intents: 9
+2025-01-20T23:54:26.170Z [INFO]: Fetched available rooms: 4
+2025-01-20T23:54:26.251Z [INFO]: Fetched user registrations: 2
+2025-01-21T00:14:32.447Z [INFO]: Executing query to fetch total intents
+2025-01-21T00:14:32.451Z [INFO]: Executing query to fetch available rooms
+2025-01-21T00:14:32.452Z [INFO]: Executing query to fetch user registrations
+2025-01-21T00:14:32.632Z [INFO]: Fetched available rooms: 4
+2025-01-21T00:14:32.634Z [INFO]: Fetched total intents: 9
+2025-01-21T00:14:32.668Z [INFO]: Fetched user registrations: 2
+2025-01-21T00:35:19.832Z [INFO]: Executing query to fetch total intents
+2025-01-21T00:35:19.838Z [INFO]: Executing query to fetch user registrations
+2025-01-21T00:35:19.841Z [INFO]: Executing query to fetch available rooms
+2025-01-21T00:35:20.022Z [INFO]: Fetched total intents: 9
+2025-01-21T00:35:20.789Z [INFO]: Fetched available rooms: 4
+2025-01-21T00:35:20.805Z [INFO]: Fetched user registrations: 2

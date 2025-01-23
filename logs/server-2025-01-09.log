@@ -1,0 +1,286 @@
+2025-01-09T09:50:41.641Z [INFO]: Server started on http://localhost:3000 with PID: 19140
+2025-01-09T09:50:41.648Z [INFO]: Environment: production
+2025-01-09T10:36:03.050Z [INFO]: Server started on http://localhost:3000 with PID: 19652
+2025-01-09T10:36:03.052Z [INFO]: Environment: production
+2025-01-09T10:44:44.022Z [INFO]: Server started on http://localhost:3000 with PID: 16656
+2025-01-09T10:44:44.026Z [INFO]: Environment: production
+2025-01-09T10:44:58.133Z [INFO]: Server started on http://localhost:3000 with PID: 16928
+2025-01-09T10:44:58.140Z [INFO]: Environment: production
+2025-01-09T10:45:02.479Z [INFO]: Server started on http://localhost:3000 with PID: 8936
+2025-01-09T10:45:02.482Z [INFO]: Environment: production
+2025-01-09T11:13:12.952Z [INFO]: Server started on http://localhost:3000 with PID: 20552
+2025-01-09T11:13:12.955Z [INFO]: Environment: production
+2025-01-09T11:21:50.060Z [INFO]: Server started on http://localhost:3000 with PID: 1860
+2025-01-09T11:21:50.062Z [INFO]: Environment: production
+2025-01-09T11:21:51.979Z [INFO]: Server started on http://localhost:3000 with PID: 7784
+2025-01-09T11:21:51.982Z [INFO]: Environment: production
+2025-01-09T11:22:48.773Z [INFO]: Server started on http://localhost:3000 with PID: 4620
+2025-01-09T11:22:48.775Z [INFO]: Environment: production
+2025-01-09T11:24:49.203Z [INFO]: Server started on http://localhost:3000 with PID: 15968
+2025-01-09T11:24:49.206Z [INFO]: Environment: production
+2025-01-09T11:34:55.146Z [INFO]: Server started on http://localhost:3000 with PID: 18444
+2025-01-09T11:34:55.148Z [INFO]: Environment: production
+2025-01-09T11:35:01.119Z [INFO]: Server started on http://localhost:3000 with PID: 11800
+2025-01-09T11:35:01.121Z [INFO]: Environment: production
+2025-01-09T11:38:59.311Z [INFO]: Server started on http://localhost:3000 with PID: 17296
+2025-01-09T11:38:59.313Z [INFO]: Environment: production
+2025-01-09T11:39:00.649Z [INFO]: Server started on http://localhost:3000 with PID: 20876
+2025-01-09T11:39:00.652Z [INFO]: Environment: production
+2025-01-09T11:39:50.593Z [INFO]: Server started on http://localhost:3000 with PID: 8600
+2025-01-09T11:39:50.595Z [INFO]: Environment: production
+2025-01-09T11:48:08.434Z [INFO]: Server started on http://localhost:3000 with PID: 17752
+2025-01-09T11:48:08.436Z [INFO]: Environment: production
+2025-01-09T11:48:31.905Z [INFO]: Server started on http://localhost:3000 with PID: 18472
+2025-01-09T11:48:31.907Z [INFO]: Environment: production
+2025-01-09T11:48:51.856Z [INFO]: Server started on http://localhost:3000 with PID: 13876
+2025-01-09T11:48:51.858Z [INFO]: Environment: production
+2025-01-09T11:48:53.572Z [INFO]: Server started on http://localhost:3000 with PID: 2752
+2025-01-09T11:48:53.575Z [INFO]: Environment: production
+2025-01-09T11:52:30.823Z [INFO]: Server started on http://localhost:3000 with PID: 14952
+2025-01-09T11:52:30.826Z [INFO]: Environment: production
+2025-01-09T11:55:00.141Z [INFO]: Server started on http://localhost:3000 with PID: 17492
+2025-01-09T11:55:00.143Z [INFO]: Environment: production
+2025-01-09T11:55:09.702Z [INFO]: Server started on http://localhost:3000 with PID: 2704
+2025-01-09T11:55:09.703Z [INFO]: Environment: production
+2025-01-09T11:55:13.543Z [INFO]: Server started on http://localhost:3000 with PID: 10424
+2025-01-09T11:55:13.545Z [INFO]: Environment: production
+2025-01-09T11:55:15.168Z [INFO]: Server started on http://localhost:3000 with PID: 13240
+2025-01-09T11:55:15.170Z [INFO]: Environment: production
+2025-01-09T11:55:25.700Z [INFO]: Server started on http://localhost:3000 with PID: 3336
+2025-01-09T11:55:25.702Z [INFO]: Environment: production
+2025-01-09T11:55:29.741Z [INFO]: Server started on http://localhost:3000 with PID: 18780
+2025-01-09T11:55:29.743Z [INFO]: Environment: production
+2025-01-09T11:55:56.596Z [INFO]: Server started on http://localhost:3000 with PID: 15932
+2025-01-09T11:55:56.597Z [INFO]: Environment: production
+2025-01-09T12:15:44.766Z [INFO]: Server started on http://localhost:3000 with PID: 12440
+2025-01-09T12:15:44.768Z [INFO]: Environment: production
+2025-01-09T12:15:46.079Z [INFO]: Server started on http://localhost:3000 with PID: 1668
+2025-01-09T12:15:46.081Z [INFO]: Environment: production
+2025-01-09T12:15:50.187Z [INFO]: Server started on http://localhost:3000 with PID: 17996
+2025-01-09T12:15:50.189Z [INFO]: Environment: production
+2025-01-09T12:15:51.266Z [INFO]: Server started on http://localhost:3000 with PID: 516
+2025-01-09T12:15:51.268Z [INFO]: Environment: production
+2025-01-09T12:19:20.548Z [INFO]: Server started on http://localhost:3000 with PID: 18680
+2025-01-09T12:19:20.550Z [INFO]: Environment: production
+2025-01-09T12:25:39.095Z [INFO]: Server started on http://localhost:3000 with PID: 12908
+2025-01-09T12:25:39.098Z [INFO]: Environment: production
+2025-01-09T12:25:43.890Z [INFO]: Server started on http://localhost:3000 with PID: 11032
+2025-01-09T12:25:43.892Z [INFO]: Environment: production
+2025-01-09T12:25:49.830Z [INFO]: Server started on http://localhost:3000 with PID: 12112
+2025-01-09T12:25:49.832Z [INFO]: Environment: production
+2025-01-09T12:25:51.401Z [INFO]: Server started on http://localhost:3000 with PID: 14228
+2025-01-09T12:25:51.403Z [INFO]: Environment: production
+2025-01-09T12:25:55.339Z [INFO]: Server started on http://localhost:3000 with PID: 17248
+2025-01-09T12:25:55.341Z [INFO]: Environment: production
+2025-01-09T12:25:58.221Z [INFO]: Server started on http://localhost:3000 with PID: 7416
+2025-01-09T12:25:58.223Z [INFO]: Environment: production
+2025-01-09T12:25:59.382Z [INFO]: Server started on http://localhost:3000 with PID: 6320
+2025-01-09T12:25:59.384Z [INFO]: Environment: production
+2025-01-09T12:26:49.136Z [INFO]: Server started on http://localhost:3000 with PID: 11248
+2025-01-09T12:26:49.139Z [INFO]: Environment: production
+2025-01-09T12:28:13.929Z [INFO]: Server started on http://localhost:3000 with PID: 20540
+2025-01-09T12:28:13.930Z [INFO]: Environment: production
+2025-01-09T12:28:29.836Z [INFO]: Server started on http://localhost:3000 with PID: 6824
+2025-01-09T12:28:29.838Z [INFO]: Environment: production
+2025-01-09T12:29:56.829Z [INFO]: Server started on http://localhost:3000 with PID: 15204
+2025-01-09T12:29:56.831Z [INFO]: Environment: production
+2025-01-09T12:36:36.174Z [INFO]: Server started on http://localhost:3000 with PID: 21020
+2025-01-09T12:36:36.175Z [INFO]: Environment: production
+2025-01-09T12:44:35.219Z [INFO]: Server started on http://localhost:3000 with PID: 19012
+2025-01-09T12:44:35.221Z [INFO]: Environment: production
+2025-01-09T12:44:39.322Z [INFO]: Server started on http://localhost:3000 with PID: 16060
+2025-01-09T12:44:39.324Z [INFO]: Environment: production
+2025-01-09T12:44:40.809Z [INFO]: Server started on http://localhost:3000 with PID: 20116
+2025-01-09T12:44:40.811Z [INFO]: Environment: production
+2025-01-09T12:44:42.268Z [INFO]: Server started on http://localhost:3000 with PID: 11748
+2025-01-09T12:44:42.270Z [INFO]: Environment: production
+2025-01-09T12:44:46.648Z [INFO]: Server started on http://localhost:3000 with PID: 12544
+2025-01-09T12:44:46.650Z [INFO]: Environment: production
+2025-01-09T12:44:48.715Z [INFO]: Server started on http://localhost:3000 with PID: 20360
+2025-01-09T12:44:48.717Z [INFO]: Environment: production
+2025-01-09T12:44:49.844Z [INFO]: Server started on http://localhost:3000 with PID: 21428
+2025-01-09T12:44:49.846Z [INFO]: Environment: production
+2025-01-09T12:44:51.140Z [INFO]: Server started on http://localhost:3000 with PID: 18632
+2025-01-09T12:44:51.141Z [INFO]: Environment: production
+2025-01-09T12:45:36.751Z [INFO]: Server started on http://localhost:3000 with PID: 18116
+2025-01-09T12:45:36.753Z [INFO]: Environment: production
+2025-01-09T12:45:40.168Z [INFO]: Server started on http://localhost:3000 with PID: 13880
+2025-01-09T12:45:40.171Z [INFO]: Environment: production
+2025-01-09T12:45:43.402Z [INFO]: Server started on http://localhost:3000 with PID: 17308
+2025-01-09T12:45:43.405Z [INFO]: Environment: production
+2025-01-09T12:45:45.439Z [INFO]: Server started on http://localhost:3000 with PID: 19472
+2025-01-09T12:45:45.441Z [INFO]: Environment: production
+2025-01-09T12:46:33.422Z [INFO]: Server started on http://localhost:3000 with PID: 12000
+2025-01-09T12:46:33.424Z [INFO]: Environment: production
+2025-01-09T12:46:38.215Z [INFO]: Server started on http://localhost:3000 with PID: 18932
+2025-01-09T12:46:38.217Z [INFO]: Environment: production
+2025-01-09T12:46:40.633Z [INFO]: Server started on http://localhost:3000 with PID: 11004
+2025-01-09T12:46:40.634Z [INFO]: Environment: production
+2025-01-09T12:47:21.988Z [INFO]: Server started on http://localhost:3000 with PID: 18604
+2025-01-09T12:47:21.990Z [INFO]: Environment: production
+2025-01-09T12:47:28.754Z [INFO]: Server started on http://localhost:3000 with PID: 12716
+2025-01-09T12:47:28.756Z [INFO]: Environment: production
+2025-01-09T13:11:56.092Z [ERROR]: Error at GET /api/dashboard/viewdashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:12:05.204Z [ERROR]: Error at GET /api/dashboard/viewdashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:12:21.010Z [ERROR]: Error at GET /api/dashboard/viewdashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:12:37.607Z [ERROR]: Error at GET /api/dashboard/viewdashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:13:55.146Z [ERROR]: Error at GET /api/dashboard/viewdashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:16:05.572Z [INFO]: Server started on http://localhost:3000 with PID: 10664
+2025-01-09T13:16:05.574Z [INFO]: Environment: production
+2025-01-09T13:17:29.566Z [INFO]: Server started on http://localhost:3000 with PID: 1248
+2025-01-09T13:17:29.569Z [INFO]: Environment: production
+2025-01-09T13:18:21.392Z [ERROR]: Error at GET /api/dashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:18:25.642Z [ERROR]: Error at GET /api/dashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:7:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:18:25.650Z [ERROR]: Error at GET /api/dashboard/available-rooms - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getAvailableRooms (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:21:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:18:25.656Z [ERROR]: Error at GET /api/dashboard/user-registrations - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getUserRegistrations (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:35:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:18:25.662Z [ERROR]: Error at GET /api/dashboard/unique-visitors - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getUniqueVisitors (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:51:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:20:45.993Z [INFO]: Server started on http://localhost:3000 with PID: 16604
+2025-01-09T13:20:45.996Z [INFO]: Environment: production
+2025-01-09T13:20:59.113Z [ERROR]: Error at GET /api/dashboard/total-intents - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getTotalIntents (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:22:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:20:59.129Z [ERROR]: Error at GET /api/dashboard/available-rooms - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getAvailableRooms (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:43:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:20:59.138Z [ERROR]: Error at GET /api/dashboard/user-registrations - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getUserRegistrations (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:64:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:20:59.149Z [ERROR]: Error at GET /api/dashboard/unique-visitors - Error: Callback function is not available with promise clients.
+    at PromisePool.query (D:\Capstone\chatbot_messpemda\node_modules\mysql2\promise.js:358:13)
+    at getUniqueVisitors (D:\Capstone\chatbot_messpemda\rasa_scripts\viewdashboardController.js:85:6)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Capstone\chatbot_messpemda\node_modules\express\lib\router\index.js:175:3)
+2025-01-09T13:21:40.170Z [INFO]: Server started on http://localhost:3000 with PID: 20156
+2025-01-09T13:21:40.171Z [INFO]: Environment: production
+2025-01-09T13:23:20.648Z [INFO]: Server started on http://localhost:3000 with PID: 14612
+2025-01-09T13:23:20.650Z [INFO]: Environment: production

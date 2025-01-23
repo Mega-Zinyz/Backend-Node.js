@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Capstone\\chatbot_messpemda\\logs\\.2712f6f225e3bae65c73775d5073f45afe152a8c-audit.json",
+    "files": [
+        {
+            "date": 1736416241604,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-09.log",
+            "hash": "41a7b115bbfb6bc20281fcfd596511a0156b2530d4d9e6250d3751a5fc2290d4"
+        },
+        {
+            "date": 1736474508602,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-10.log",
+            "hash": "a4ec5c1c3b412c94b16923388704400767d83f2abd35ef2180cc86b7b5bd7b04"
+        },
+        {
+            "date": 1736935161383,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-15.log",
+            "hash": "2c6189fbf9966d37b35a0667f107c8b8f31bd9d28440d28f613190447630a100"
+        },
+        {
+            "date": 1737115294899,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-17.log",
+            "hash": "1826c05350e8ee2c67c27a51c50f66f6f66dcb8e71cd94a04d6e8df97867d946"
+        },
+        {
+            "date": 1737391350587,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-20.log",
+            "hash": "892f95ba3913a97bd8704d963134a7e305e15a36bab48fc2bbb075d5fbeb5680"
+        },
+        {
+            "date": 1737392797046,
+            "name": "D:\\Capstone\\chatbot_messpemda\\logs\\server-2025-01-21.log",
+            "hash": "b795b9e751b36e5bb17963cc546c2bd1645ae2374267a264f720083c633e253a"
+        }
+    ],
+    "hashType": "sha256"
+}
