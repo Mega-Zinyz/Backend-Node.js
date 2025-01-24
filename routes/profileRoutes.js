@@ -9,7 +9,7 @@ const db = require('../db/db'); // Adjust path to your database configuration
 // Set up Multer for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../assets/img/profil_img')); // Directory for profile images
+        cb(null, path.join(__dirname, '../assets/profil_img')); // Directory for profile images
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname)); // Append timestamp to filename
@@ -115,7 +115,7 @@ router.put('/accounts/:no_user', upload.single('profil_url'), async (req, res) =
 
         // Delete the old profile image if it exists
         if (oldProfilUrl) {
-            const filePath = path.join(__dirname, '../assets/img/profil_img', oldProfilUrl);
+            const filePath = path.join(__dirname, '../assets/profil_img', oldProfilUrl);
             fs.unlink(filePath, (err) => {
                 if (err) {
                     console.error('Error deleting old profile image:', err);
@@ -149,7 +149,7 @@ router.delete('/accounts/:no_user', async (req, res) => {
         await db.query('DELETE FROM user_account WHERE no_user = ?', [no_user]);
 
         // Step 3: Delete the old image file
-        const oldImagePath = path.join(__dirname, '../assets/img/profil_img', oldProfilUrl); // Adjust path as necessary
+        const oldImagePath = path.join(__dirname, '../assets/profil_img', oldProfilUrl); // Adjust path as necessary
         fs.unlink(oldImagePath, (err) => {
             if (err) {
                 console.error('Error deleting old image:', err);
