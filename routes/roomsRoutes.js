@@ -8,7 +8,7 @@ const db = require('../db/db');
 // Set up multer for file uploads
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, '../assets/room_img'));
+        cb(null, path.join(__dirname, '../assets/img/room_img'));
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + path.extname(file.originalname));
@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
 router.post('/', upload.single('image'), async (req, res) => {
     try {
         const { name, description } = req.body;
-        const imageUrl = req.file ? `/../assets/room_img/${req.file.filename}` : null;
+        const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
 
         if (!name || !description) {
             return res.status(400).json({ message: 'Name and description are required' });
@@ -107,7 +107,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', upload.single('image'), async (req, res) => {
     const roomId = req.params.id;
     const { name, description } = req.body;
-    const imageUrl = req.file ? `/../assets/room_img/${req.file.filename}` : null;
+    const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
 
     try {
         if (!name || !description) {
