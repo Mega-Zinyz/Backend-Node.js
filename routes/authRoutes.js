@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
                 user: {
                     no_user: user.no_user,
                     username: user.username,
-                    profil_url: `http://localhost:${process.env.MYSQLPORT}/profil_img/${user.profil_url}`,
+                    profil_url: `${process.env.RAILWAY_PRIVATE_DOMAIN}:${process.env.MYSQLPORT}/profil_img/${user.profil_url}`,
                 },
             });
         } else {
