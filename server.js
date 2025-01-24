@@ -23,7 +23,7 @@ const app = express();
 
 // Variables
 const PORT = process.env.PORT || 3000;
-const CLIENT_URL = process.env.CLIENT_URL || 'https://frontend-angular.railway.internal';
+const CLIENT_URL = process.env.CLIENT_URL || 'https://frontend-angular-main.up.railway.app';
 const ROOM_IMG_DIR = path.join(__dirname, 'assets', 'img', 'room_img');
 const PROFILE_IMG_DIR = path.join(__dirname, 'assets', 'img', 'profil_img');
 
