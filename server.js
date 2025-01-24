@@ -15,7 +15,6 @@ const profileRoutes = require('./routes/profileRoutes');
 const intentsRoutes = require('./routes/intentsRoutes');
 const rulesRoutes = require('./routes/rulesRoutes');
 const dashboardRoutes = require('./routes/viewdashboardRouter');
-const dashboardController = require('./rasa_scripts/viewdashboardController'); // Import controller for dashboard directly
 
 const environment = process.env.NODE_ENV || 'production';
 
