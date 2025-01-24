@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
                 user: {
                     no_user: user.no_user,
                     username: user.username,
-                    profil_url: `${process.env.RAILWAY_PUBLIC_DOMAIN}/profil_img/${user.profil_url}`,
+                    profil_url: `${process.env.RAILWAY_PUBLIC_DOMAIN}/assets/profil_img/${user.profil_url}`,
                 },
             });
         } else {
