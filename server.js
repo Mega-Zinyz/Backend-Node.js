@@ -23,8 +23,8 @@ const app = express();
 // Variables
 const PORT = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL || 'https://frontend-angular-main.up.railway.app';
-const ROOM_IMG_DIR = path.join(__dirname, 'assets', 'img', 'room_img');
-const PROFILE_IMG_DIR = path.join(__dirname, 'assets', 'img', 'profil_img');
+const ROOM_IMG_DIR = path.join(__dirname, 'assets', 'room_img');
+const PROFILE_IMG_DIR = path.join(__dirname, 'assets', 'profil_img');
 
 // Configure daily log rotation using winston
 const logDirectory = path.join(__dirname, 'logs');
