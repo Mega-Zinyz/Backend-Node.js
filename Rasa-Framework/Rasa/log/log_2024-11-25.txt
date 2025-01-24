@@ -1,0 +1,275 @@
+Starting Rasa server with model: D:\Capstone Project\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 23948
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Project\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa server exited with code 2, signal null
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action Error: 2024-11-25 08:30:12 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting action endpoint server...
+Rasa Action Error: 2024-11-25 08:30:12 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_rooms'.
+Rasa Action Error: 2024-11-25 08:30:12 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_room_details'.
+Rasa Action Error: 2024-11-25 08:30:13 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting plugins...
+Rasa Action Error: 2024-11-25 08:30:13 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Action endpoint is up and running on http://0.0.0.0:5055
+Starting Rasa server with model: D:\Capstone Project\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 19276
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Project\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa server exited with code 2, signal null
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 3132
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa server exited with code 2, signal null
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action Error: 2024-11-25 08:34:20 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting action endpoint server...
+Rasa Action Error: 2024-11-25 08:34:20 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_rooms'.
+Rasa Action Error: 2024-11-25 08:34:20 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_room_details'.
+Rasa Action Error: 2024-11-25 08:34:20 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting plugins...
+Rasa Action Error: 2024-11-25 08:34:20 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Action endpoint is up and running on http://0.0.0.0:5055
+Rasa Action Error: 2024-11-25 08:41:26 [1;30mINFO    [0m [34mroot[0m  - Running action_retrieve_rooms
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 16896
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa server exited with code 2, signal null
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 23848
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa server exited with code 2, signal null
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action Error: 2024-11-25 08:45:21 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting action endpoint server...
+Rasa Action Error: 2024-11-25 08:45:21 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_rooms'.
+Rasa Action Error: 2024-11-25 08:45:21 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_room_details'.
+Rasa Action Error: 2024-11-25 08:45:21 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting plugins...
+Rasa Action Error: 2024-11-25 08:45:21 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Action endpoint is up and running on http://0.0.0.0:5055
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 11128
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa server exited with code 2, signal null
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action Error: 2024-11-25 08:49:32 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting action endpoint server...
+Rasa Action Error: 2024-11-25 08:49:32 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_rooms'.
+Rasa Action Error: 2024-11-25 08:49:32 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_room_details'.
+Rasa Action Error: 2024-11-25 08:49:32 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting plugins...
+Rasa Action Error: 2024-11-25 08:49:32 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Action endpoint is up and running on http://0.0.0.0:5055
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 13588
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa server exited with code 2, signal null
+Rasa Action Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action Error: 2024-11-25 08:53:12 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting action endpoint server...
+Rasa Action Error: 2024-11-25 08:53:12 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_rooms'.
+Rasa Action Error: 2024-11-25 08:53:12 [1;30mINFO    [0m [34mrasa_sdk.executor[0m  - Registered function for 'action_retrieve_room_details'.
+Rasa Action Error: 2024-11-25 08:53:12 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Starting plugins...
+Rasa Action Error: 2024-11-25 08:53:12 [1;30mINFO    [0m [34mrasa_sdk.endpoint[0m  - Action endpoint is up and running on http://0.0.0.0:5055
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 3784
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa server exited with code 2, signal null
+Starting Rasa server with model: D:\Kerja Praktek\website\src\app\back-end\Rasa\models\20241027-173808-obvious-cue.tar.gz
+Rasa server started successfully with PID: 25132
+Rasa Error: C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Error: usage: rasa run [-h] [-v] [-vv] [--quiet]
+                [--logging-config-file LOGGING_CONFIG_FILE] [-m MODEL]
+                [--log-file LOG_FILE] [--use-syslog]
+                [--syslog-address SYSLOG_ADDRESS] [--syslog-port SYSLOG_PORT]
+                [--syslog-protocol SYSLOG_PROTOCOL] [--endpoints ENDPOINTS]
+                [-i INTERFACE] [-p PORT] [-t AUTH_TOKEN] [--cors [CORS ...]]
+                [--enable-api] [--response-timeout RESPONSE_TIMEOUT]
+                [--request-timeout REQUEST_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD] [--jwt-private-key JWT_PRIVATE_KEY]
+                {actions} ... [model-as-positional-argument]
+Rasa Error: rasa run: error: argument {actions}: invalid choice: 'Praktek\\website\\src\\app\\back-end\\Rasa\\models\\20241027-173808-obvious-cue.tar.gz' (choose from 'actions')
+Rasa server exited with code 2, signal null
