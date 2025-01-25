@@ -38,6 +38,11 @@ router.get('/accounts/:no_user', async (req, res) => {
             return res.status(404).json({ message: 'User not found.' });
         }
 
+        // Process profil_url to include base URL
+        userRows[0].profil_url = userRows[0].profil_url
+            ? `${req.protocol}://${req.get('host')}/profil_img/${userRows[0].profil_url}`
+            : null;
+
         res.status(200).json(userRows[0]); // Send back the user data
     } catch (error) {
         console.error('Error fetching user:', error);
