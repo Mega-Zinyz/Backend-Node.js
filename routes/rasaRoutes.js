@@ -8,7 +8,7 @@ const router = express.Router();
 
 // Define the log directory paths
 const logDirectory = process.env.LOG_DIR || path.join(__dirname, '../logs');
-const logDirectoryToday = process.env.LOG_TODAY_DIR || path.join(__dirname, '../Rasa-Framework/Rasa/log');
+const logDirectoryToday = process.env.LOG_TODAY_DIR || path.join(__dirname, '../Rasa/log');
 const rasaUrl = process.env.RASA_URL || 'http://localhost:5005';
 
 // Route to send messages to Rasa
