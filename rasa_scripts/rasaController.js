@@ -27,16 +27,35 @@ const writeLogToFile = (data) => {
     });
 };
 
-// Function to get the latest model file from the models directory
+// Fungsi untuk mendapatkan model terbaru berdasarkan nama file (tanggal dalam nama file)
 const getLatestModel = () => {
+    // Pastikan direktori model ada
     if (!fs.existsSync(modelsDir)) throw new Error('Model directory does not exist');
 
+    // Ambil semua file dengan ekstensi .tar.gz
     const files = fs.readdirSync(modelsDir).filter(file => file.endsWith('.tar.gz'));
+
+    // Jika tidak ada file model, lempar error
     if (files.length === 0) throw new Error('No model files found in the directory');
 
-    const latestModel = files.sort((a, b) => fs.statSync(path.join(modelsDir, b)).mtime - fs.statSync(path.join(modelsDir, a)).mtime)[0];
+    // Mengurutkan file berdasarkan tanggal yang ada di nama file (format: YYYYMMDD-HHMMSS)
+    const latestModel = files.sort((a, b) => {
+        const dateA = new Date(a.substring(0, 8) + 'T' + a.substring(9, 15) + ':00'); // Ambil tanggal dan waktu dari nama file a
+        const dateB = new Date(b.substring(0, 8) + 'T' + b.substring(9, 15) + ':00'); // Ambil tanggal dan waktu dari nama file b
+        return dateB - dateA; // Urutkan dari yang terbaru
+    })[0];
+
+    // Kembalikan path lengkap ke model terbaru
     return path.join(modelsDir, latestModel);
 };
+
+// Contoh pemanggilan fungsi
+try {
+    const latestModel = getLatestModel();
+    console.log('Model terbaru:', latestModel);
+} catch (error) {
+    console.error(error.message);
+}
 
 // Function to check if a port is in use
 const isPortInUse = async (port) => {
