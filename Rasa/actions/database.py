@@ -1,20 +1,15 @@
 import mysql.connector
 import os
-from dotenv import load_dotenv
 from mysql.connector import Error
 
-# Load environment variables from the .env file located outside of the Rasa directory
-dotenv_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', '.env')
-load_dotenv(dotenv_path)
-
 def get_db_connection():
-    # Load variables from the environment
+    # Mengakses environment variables langsung dari Railway
     db_host = os.getenv('DB_HOST')
     db_user = os.getenv('DB_USER')
     db_password = os.getenv('DB_PASSWORD')
     db_name = os.getenv('DB_NAME')
 
-    # Connect to MySQL database using variables from .env
+    # Koneksi ke database MySQL menggunakan variabel dari environment
     connection = mysql.connector.connect(
         host=db_host,
         user=db_user,
@@ -27,15 +22,15 @@ def fetch_rooms():
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
-        query = "SELECT name, description, imageUrl FROM rooms"  # Include imageUrl in the query
+        query = "SELECT name, description, imageUrl FROM rooms"  # Menambahkan imageUrl dalam query
         cursor.execute(query)
-        rooms = cursor.fetchall()  # Returns a list of tuples
-        return rooms  # Return fetched room data
+        rooms = cursor.fetchall()  # Mengambil data dalam bentuk list of tuples
+        return rooms  # Mengembalikan data ruangan
     except Exception as e:
         print(f"Error fetching rooms: {e}")
-        return []  # Return an empty list on error
+        return []  # Mengembalikan list kosong jika terjadi error
     finally:
-        # Ensure resources are cleaned up
+        # Menutup cursor dan koneksi
         if cursor:
             cursor.close()
         if conn:
@@ -45,14 +40,13 @@ def fetch_room_details(room_name: str):
     try:
         connection = get_db_connection()
         cursor = connection.cursor()
-        # Prepare the query to fetch room details
         query = "SELECT name, description, imageUrl FROM rooms WHERE name = %s"
         cursor.execute(query, (room_name,))
-        room_details = cursor.fetchone()  # Fetch one row
-        return room_details  # Returns a tuple (name, description, imageUrl)
+        room_details = cursor.fetchone()  # Mengambil satu baris data
+        return room_details  # Mengembalikan data ruangan
     except Error as e:
         print(f"Error: {e}")
-        return None  # Return None if there was an error
+        return None  # Mengembalikan None jika terjadi error
     finally:
         if cursor:
             cursor.close()
