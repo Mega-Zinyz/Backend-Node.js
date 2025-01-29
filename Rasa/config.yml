@@ -11,8 +11,8 @@ pipeline:
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: CountVectorsFeaturizer
-  - name: DIETClassifier
-    epochs: 100
+  - name: SpacyNLP
+    model: "xx_ent_wiki_sm"
   - name: EntitySynonymMapper
   - name: ResponseSelector
   - name: FallbackClassifier
