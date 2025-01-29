@@ -255,6 +255,11 @@ const restartRasa = async () => {
     }, 1000); // Delay before restarting
 };
 
+// Function to get the current Rasa process
+const getRasaProcess = () => {
+    return rasaProcess;
+};
+
 module.exports = {
     startRasa,
     stopRasa,
