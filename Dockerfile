@@ -9,19 +9,6 @@ RUN adduser --disabled-password --gecos "" rasauser && \
 # Set direktori kerja untuk Python
 WORKDIR /app
 
-# Pasang versi SQLAlchemy yang kompatibel dengan Rasa
-RUN pip install --no-cache-dir "sqlalchemy<2.0"
-
-# Pasang versi setuptools yang mendukung Rasa
-RUN pip install --no-cache-dir "setuptools<58"
-
-# Pastikan TensorFlow Lite tidak menggunakan JAX yang deprecated
-RUN pip install --no-cache-dir "jax<0.4"
-
-# Tambahkan variabel environment agar warning tidak mengganggu
-ENV SQLALCHEMY_WARN_20=1
-ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
-
 # Install dependensi dasar untuk Python dan sistem
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -48,6 +35,10 @@ RUN apt update && apt install -y lsof net-tools
 
 # Salin seluruh kode aplikasi Node.js ke dalam container
 COPY . /app/
+
+# Tambahkan variabel environment agar warning tidak mengganggu
+ENV SQLALCHEMY_WARN_20=1
+ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
 
 # Ubah kepemilikan folder kerja ke pengguna rasauser
 RUN chown -R rasauser:rasauser /app
