@@ -4,6 +4,7 @@ const fs = require('fs');
 const net = require('net');
 const axios = require('axios');
 const { getLogFileName } = require('../constants/constants');
+const rasaUrl = process.env.RASA_URL || 'http://localhost:5005';
 
 let rasaProcess = null;
 let actionProcess = null;
@@ -217,7 +218,7 @@ const checkRasaReady = async () => {
     const interval = setInterval(async () => {
         attempts++;
         try {
-            const response = await axios.get('http://localhost:5005/status');
+            const response = await axios.get(`${rasaUrl}/status`);
             console.log('Response data:', response.data); 
             if (response.data && response.data.model_file) {
                 clearInterval(interval);
