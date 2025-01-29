@@ -9,120 +9,59 @@ let rasaProcess = null;
 let actionProcess = null;
 let isRasaRunning = false;
 let isActionServerRunning = false;
-let isRasaLoading = false;  // Flag to indicate if Rasa is starting or stopping
+let isRasaLoading = false;  
 let rasaPID = null;
 let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
+const rasaPort = process.env.RASA_PORT || 5005;
+const actionPort = 5055;
 let lastLogFileName = getLogFileName();
 
-// Function to write log data to a file
-const writeLogToFile = (data) => {
-    const currentLogFileName = getLogFileName();
-    const currentLogFilePath = path.join(__dirname, '..', 'Rasa', 'log', currentLogFileName);
-    fs.appendFile(currentLogFilePath, data, (err) => {
-        if (err) console.error('Error writing to log file:', err);
-    });
-};
-
-// Function to get the latest model file from the models directory
-const getLatestModel = () => {
-    if (!fs.existsSync(modelsDir)) throw new Error('Model directory does not exist');
-
-    const files = fs.readdirSync(modelsDir).filter(file => file.endsWith('.tar.gz'));
-    if (files.length === 0) throw new Error('No model files found in the directory');
-
-    const latestModel = files.sort((a, b) => fs.statSync(path.join(modelsDir, b)).mtime - fs.statSync(path.join(modelsDir, a)).mtime)[0];
-    return path.join(modelsDir, latestModel);
-};
-
-// Function to check if a port is in use
+// ✅ Tampilkan port saat mengecek statusnya
 const isPortInUse = async (port) => {
     return new Promise((resolve) => {
         const server = net.createServer();
-        server.once('error', (err) => resolve(err.code === 'EADDRINUSE'));
-        server.once('listening', () => server.close(() => resolve(false)));
+        server.once('error', (err) => {
+            console.log(`🟡 Port ${port} is in use.`);
+            resolve(err.code === 'EADDRINUSE');
+        });
+        server.once('listening', () => {
+            console.log(`🟢 Port ${port} is free.`);
+            server.close(() => resolve(false));
+        });
         server.listen(port);
     });
 };
 
-const waitForPortToBeFree = async (port, timeout = 10000) => {
-    const startTime = Date.now();
-    while (await isPortInUse(port)) {
-        console.log(`Waiting for port ${port} to be free...`);
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Tunggu 1 detik sebelum cek lagi
-        if (Date.now() - startTime > timeout) {
-            console.error(`Port ${port} is still in use after timeout.`);
-            return false;
-        }
-    }
-    return true;
-};
-
-const gracefulShutdown = (pid) => {
-    if (!pid) return;
-
-    try {
-        // Check if the process exists before sending SIGTERM
-        process.kill(pid, 0);  // This checks if the process exists without killing it
-        process.kill(pid, 'SIGTERM');  // This asks the process to terminate gracefully
-        console.log(`Sent SIGTERM to process ${pid}`);
-    } catch (err) {
-        if (err.code === 'ESRCH') {
-            console.log(`Process with PID ${pid} does not exist.`);
-        } else {
-            console.error(`Failed to send SIGTERM to process ${pid}: ${err.message}`);
-        }
-        // If SIGTERM fails or process does not terminate, use SIGKILL
-        try {
-            process.kill(pid, 'SIGKILL'); // Force kill if needed
-            console.log(`Force killed process ${pid}`);
-        } catch (killErr) {
-            console.error(`Failed to force kill process ${pid}: ${killErr.message}`);
-        }
-    }
-};
-
-// Example of how to use it in your killProcessOnPort method
-const killProcessOnPort = () => {
-    if (rasaPID) {
-        gracefulShutdown(rasaPID);
-    }
-
-    if (actionServerPID) {
-        gracefulShutdown(actionServerPID);
-    }
-};
-
+// ✅ Saat Memulai Rasa, tampilkan port
 const startRasa = async () => {
     if (isRasaRunning || isRasaLoading) {
-        console.log("Rasa server is already running or loading.");
+        console.log("⚠️ Rasa server is already running or loading.");
         return;
     }
 
-    const port = process.env.RASA_PORT || 5005;
-
-    const inUse = await isPortInUse(port);
+    const inUse = await isPortInUse(rasaPort);
     if (inUse) {
-        console.log(`Port ${port} is already in use. Attempting to stop any running process...`);
-        await killProcessOnPort(port);
+        console.log(`⚠️ Port ${rasaPort} is in use. Attempting to stop any running process...`);
+        await killProcessOnPort(rasaPort);
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        if (await isPortInUse(port)) {
-            console.error(`Port ${port} is still in use after stopping the process. Exiting...`);
+        if (await isPortInUse(rasaPort)) {
+            console.error(`❌ Port ${rasaPort} is still in use after stopping the process. Exiting...`);
             return;
         }
     }
 
     isRasaLoading = true;
     const latestModel = getLatestModel();
-    console.log(`Starting Rasa server with model: ${latestModel}`);
-    writeLogToFile(`Starting Rasa server with model: ${latestModel}\n`);
+    console.log(`🚀 Starting Rasa server on port ${rasaPort} with model: ${latestModel}`);
 
     try {
         rasaProcess = spawn('python', [
             '-m', 'rasa', 'run', 
             '--model', latestModel, 
             '--enable-api', 
+            '--port', rasaPort, 
             '--endpoints', path.join(__dirname, '..', 'Rasa', 'endpoints.yml')
         ], {
             shell: true,
@@ -131,37 +70,29 @@ const startRasa = async () => {
 
         rasaPID = rasaProcess.pid;
         isRasaRunning = true;
-        console.log(`Rasa server started successfully with PID: ${rasaProcess.pid}`);
-        writeLogToFile(`Rasa server started successfully with PID: ${rasaProcess.pid}\n`);
+        console.log(`✅ Rasa server started successfully on port ${rasaPort} with PID: ${rasaProcess.pid}`);
 
         rasaProcess.on('exit', (code, signal) => {
-            console.log(`Rasa process exited with code ${code}, signal ${signal}`);
-            writeLogToFile(`Rasa server exited with code ${code}, signal ${signal}\n`);
+            console.log(`🛑 Rasa process exited with code ${code}, signal ${signal}`);
             isRasaRunning = false;
             isRasaLoading = false;
             rasaProcess = null;
         });
 
-        rasaProcess.stderr.on('data', (data) => {
-            const logData = `Rasa Error: ${data.toString()}`;
-            console.error(logData);
-            writeLogToFile(logData);
-        });
-
         await checkRasaReady();
         await startActionServer();
     } catch (error) {
-        console.error(`Failed to start Rasa server: ${error.message}`);
-        writeLogToFile(`Failed to start Rasa server: ${error.message}\n`);
+        console.error(`❌ Failed to start Rasa server: ${error.message}`);
         isRasaRunning = false;
         isRasaLoading = false;
         rasaProcess = null;
     }
 };
 
+// ✅ Saat Memulai Action Server, tampilkan port
 const startActionServer = async () => {
     if (isActionServerRunning) {
-        console.log("Rasa action server is already running.");
+        console.log("⚠️ Rasa action server is already running.");
         return;
     }
 
@@ -169,8 +100,9 @@ const startActionServer = async () => {
         const cwdPath = path.join(__dirname, '..', 'Rasa');
         const pythonPath = path.join(__dirname, '..', 'Rasa');
 
-        actionServerPID = actionProcess.pid;
-        actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
+        console.log(`🚀 Starting Rasa Action Server on port ${actionPort}...`);
+
+        actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions', '--port', actionPort], {
             shell: true,
             cwd: cwdPath,
             env: { 
@@ -180,89 +112,30 @@ const startActionServer = async () => {
             stdio: ['ignore', 'pipe', 'pipe'],
         });
 
+        actionServerPID = actionProcess.pid;
         isActionServerRunning = true;
-        console.log(`Rasa action server started successfully with PID: ${actionProcess.pid}`);
+        console.log(`✅ Rasa action server started successfully on port ${actionPort} with PID: ${actionProcess.pid}`);
 
         actionProcess.on('exit', (code, signal) => {
-            console.log(`Rasa action server exited with code ${code}, signal ${signal}`);
+            console.log(`🛑 Rasa action server exited with code ${code}, signal ${signal}`);
             isActionServerRunning = false;
             actionProcess = null;
         });
 
-        actionProcess.stderr.on('data', (data) => {
-            const logData = `Rasa Action Error: ${data.toString()}`;
-            console.error(logData);
-            writeLogToFile(logData);
-        });
     } catch (error) {
-        console.error(`Failed to start Rasa action server: ${error.message}`);
+        console.error(`❌ Failed to start Rasa action server: ${error.message}`);
     }
 };
 
-const checkRasaReady = async () => {
-    let attempts = 0;
-    const maxAttempts = 30;
-    const checkInterval = 5000;
-
-    const interval = setInterval(async () => {
-        attempts++;
-        try {
-            const response = await axios.get('http://localhost:5005/status');
-            console.log('Response data:', response.data); 
-            if (response.data && response.data.model_file) {
-                clearInterval(interval);
-                console.log('Rasa server is online.');
-                isRasaLoading = false;
-            }
-        } catch (error) {
-            console.error(`Error checking Rasa status (attempt ${attempts}):`, error.response ? error.response.data : error.message);
-            if (attempts >= maxAttempts) {
-                clearInterval(interval);
-                console.error('Failed to start Rasa server: Rasa server failed to start within the expected time.');
-                isRasaLoading = false;
-            }
-        }
-    }, checkInterval);
-};
-
-const stopRasa = async () => {
-    if (isRasaLoading) {
-        console.log("Rasa server is currently loading, cannot stop now.");
-        return;
-    }
-
-    if (isRasaRunning) {
-        console.log("Stopping Rasa server...");
-        isRasaLoading = true;
-
-        await killProcessOnPort(process.env.RASA_PORT || 5005);
-        isRasaRunning = false;
-        console.log("Rasa server stopped.");
-    } else {
-        console.log("Rasa server is not running.");
-    }
-
-    if (isActionServerRunning) {
-        console.log("Stopping Rasa action server...");
-        await killProcessOnPort(5055);
-        isActionServerRunning = false;
-        console.log("Rasa action server stopped.");
-    } else {
-        console.log("Rasa action server is not running.");
-    }
-
-    isRasaLoading = false;
-};
-
+// ✅ Saat restart Rasa, tampilkan port
 const restartRasa = async () => {
-    console.log("Restarting Rasa server...");
+    console.log(`🔄 Restarting Rasa server on port ${rasaPort}...`);
     await stopRasa();
 
-    const port = process.env.RASA_PORT || 5005;
-    const isPortFree = await waitForPortToBeFree(port);
+    const isPortFree = await waitForPortToBeFree(rasaPort);
 
     if (!isPortFree) {
-        console.error("Cannot restart Rasa because port is still in use.");
+        console.error(`❌ Cannot restart Rasa because port ${rasaPort} is still in use.`);
         return;
     }
 
@@ -270,11 +143,62 @@ const restartRasa = async () => {
         try {
             await startRasa();
         } catch (error) {
-            console.error("Error during restart:", error);
+            console.error("❌ Error during restart:", error);
         }
     }, 1000); // Delay sebelum restart
 };
 
+// ✅ Saat stop Rasa, tampilkan port yang dibebaskan
+const stopRasa = async () => {
+    if (isRasaLoading) {
+        console.log("⚠️ Rasa server is currently loading, cannot stop now.");
+        return;
+    }
+
+    if (isRasaRunning) {
+        console.log(`🛑 Stopping Rasa server on port ${rasaPort}...`);
+        await killProcessOnPort(rasaPort);
+        isRasaRunning = false;
+        console.log(`✅ Rasa server on port ${rasaPort} stopped.`);
+    } else {
+        console.log("⚠️ Rasa server is not running.");
+    }
+
+    if (isActionServerRunning) {
+        console.log(`🛑 Stopping Rasa action server on port ${actionPort}...`);
+        await killProcessOnPort(actionPort);
+        isActionServerRunning = false;
+        console.log(`✅ Rasa action server on port ${actionPort} stopped.`);
+    } else {
+        console.log("⚠️ Rasa action server is not running.");
+    }
+};
+
+// ✅ Saat mengecek apakah Rasa siap, tampilkan port
+const checkRasaReady = async () => {
+    let attempts = 0;
+    const maxAttempts = 30;
+    const checkInterval = 5000;
+
+    console.log(`🔍 Checking if Rasa server on port ${rasaPort} is ready...`);
+
+    const interval = setInterval(async () => {
+        attempts++;
+        try {
+            const response = await axios.get(`http://localhost:${rasaPort}/status`);
+            console.log('✅ Rasa server is online on port', rasaPort);
+            clearInterval(interval);
+            isRasaLoading = false;
+        } catch (error) {
+            console.error(`❌ Error checking Rasa status on port ${rasaPort} (attempt ${attempts}):`, error.message);
+            if (attempts >= maxAttempts) {
+                clearInterval(interval);
+                console.error('❌ Rasa server failed to start within the expected time.');
+                isRasaLoading = false;
+            }
+        }
+    }, checkInterval);
+};
 
 // Function to get the current Rasa process
 const getRasaProcess = () => {
@@ -285,5 +209,5 @@ module.exports = {
     startRasa,
     stopRasa,
     restartRasa,
-    getRasaProcess
+    getRasaProcess,
 };
