@@ -47,9 +47,9 @@ const isPortInUse = (port) => {
 };
 
 function killProcessOnPort(port) {
-    const findProcessCommand = process.platform === 'win32' 
-        ? `netstat -ano | findstr :${port}` 
-        : `lsof -i :${port}`;
+    const findProcessCommand = process.platform === 'win32'
+        ? `netstat -ano | findstr :${port}`
+        : `ss -ltnp | grep :${port}`; // Use ss instead of lsof
 
     exec(findProcessCommand, (err, stdout, stderr) => {
         if (err) {
@@ -66,10 +66,10 @@ function killProcessOnPort(port) {
         lines.forEach(line => {
             const parts = line.trim().split(/\s+/);
             const pid = parts[parts.length - 1]; // Last part is the PID
-            if (parts.includes('LISTENING') || parts.includes('LISTEN')) {
+            if (parts.includes('LISTEN') || parts.includes('LISTENING')) {
                 const killCommand = process.platform === 'win32'
                     ? `taskkill /PID ${pid} /F`
-                    : `kill -9 ${pid}`;
+                    : `kill -9 ${pid}`;  // Use kill -9 to terminate process
 
                 exec(killCommand, (killErr, killStdout, killStderr) => {
                     if (killErr) {

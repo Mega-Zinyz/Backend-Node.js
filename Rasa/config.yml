@@ -12,7 +12,9 @@ pipeline:
   - name: RegexFeaturizer
   - name: CountVectorsFeaturizer
   - name: DIETClassifier
-    epochs: 100
+    epochs: 20
+    evaluate_every_number_of_epochs: 20
+    constrain_similarities: true
   - name: EntitySynonymMapper
   - name: ResponseSelector
   - name: FallbackClassifier
