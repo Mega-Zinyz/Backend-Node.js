@@ -4,7 +4,7 @@ const fs = require('fs');
 const net = require('net');
 const axios = require('axios');
 const { getLogFileName } = require('../constants/constants');
-const rasaUrl = 'http://localhost:5005';
+const rasaUrl = process.env.RASA_URL;
 
 let rasaProcess = null;
 let actionProcess = null;
