@@ -153,7 +153,7 @@ const startRasa = async () => {
         });
 
         rasaProcess.stderr.on('data', (data) => {
-            const logData = `Rasa Error: ${data.toString()}`;
+            const logData = `Rasa : ${data.toString()}`;
             console.error(logData);
             writeLogToFile(logData);
         });
@@ -200,7 +200,7 @@ const startActionServer = async () => {
         });
 
         actionProcess.stderr.on('data', (data) => {
-            const logData = `Rasa Action Error: ${data.toString()}`;
+            const logData = `Rasa Action : ${data.toString()}`;
             console.error(logData);
             writeLogToFile(logData);
         });

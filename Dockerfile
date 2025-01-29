@@ -31,6 +31,8 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - \
 COPY package.json /app/
 RUN npm install
 
+RUN apt update && apt install -y lsof net-tools
+
 # Salin seluruh kode aplikasi Node.js ke dalam container
 COPY . /app/
 
