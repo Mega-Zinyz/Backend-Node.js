@@ -25,7 +25,7 @@ const getRulesFromDatabase = async () => {
 
 // Function to clear existing rules.yml
 const clearRulesFile = async () => {
-    const rulesFilePath = path.resolve(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data', 'rules.yml');
+    const rulesFilePath = path.resolve(__dirname, '..', 'Rasa', 'data', 'rules.yml');
     const clearedData = {
         version: '2.0',
         rules: []
@@ -58,7 +58,7 @@ const exportRulesToYAML = async () => {
         quotingType: '"',
     });
 
-    const rulesFilePath = path.resolve(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data', 'rules.yml');
+    const rulesFilePath = path.resolve(__dirname, '..', 'Rasa', 'data', 'rules.yml');
 
     try {
         await fs.promises.writeFile(rulesFilePath, updatedYamlStr);

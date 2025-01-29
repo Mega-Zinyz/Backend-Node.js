@@ -9,13 +9,20 @@ const router = express.Router();
 // Define the log directory paths
 const logDirectory = process.env.LOG_DIR || path.join(__dirname, '../logs');
 const logDirectoryToday = process.env.LOG_TODAY_DIR || path.join(__dirname, '../Rasa-Framework/Rasa/log');
-const rasaUrl = process.env.RASA_URL || 'https://chatbot-mess-pemda-main.up.railway.app/';
+const rasaUrl = process.env.RASA_URL || 'http://localhost:5005';
 
+// Route to send messages to Rasa
 router.post('/message', async (req, res) => {
     try {
+        const { sender, message } = req.body;
+
+        if (!sender || !message) {
+            return res.status(400).send('Missing sender or message.');
+        }
+
         const rasaResponse = await axios.post(`${rasaUrl}/webhooks/rest/webhook`, {
-            sender: req.body.sender,
-            message: req.body.message,
+            sender,
+            message,
         });
 
         // Check if the response includes actions
@@ -23,6 +30,9 @@ router.post('/message', async (req, res) => {
             const actions = rasaResponse.data.filter(msg => msg.custom_data); // Example check for action response
             if (actions.length > 0) {
                 // Handle custom actions here, if needed
+                actions.forEach(action => {
+                    // Implement your custom action logic here (e.g., store data, trigger external API, etc.)
+                });
             }
         }
 
@@ -32,7 +42,7 @@ router.post('/message', async (req, res) => {
         res.status(500).send('Error communicating with Rasa server');
     }
 });
-  
+
 // Route to start Rasa
 router.post('/start', async (req, res) => {
     try {
@@ -102,7 +112,6 @@ router.get('/logs/general', (req, res) => {
     });
 });
 
-
 // Route to get the status of Rasa
 router.get('/status', async (req, res) => {
     const rasaProcess = getRasaProcess();
@@ -134,7 +143,7 @@ router.get('/status', async (req, res) => {
                 model_file: null,
                 model_id: null,
                 num_active_training_jobs: 0,
-                error: error.message
+                error: error.message || 'Unable to reach Rasa server.'
             });
         }
     } else {

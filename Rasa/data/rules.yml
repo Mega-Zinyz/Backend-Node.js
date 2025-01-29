@@ -1,0 +1,27 @@
+version: "3.1"
+
+rules:
+- rule: Respond to greeting
+  steps:
+  - intent: sapa
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: selamat_tinggal
+  - action: utter_goodbye
+
+- rule: Acknowledge the bot challenge
+  steps:
+  - intent: tantangan_bot
+  - action: utter_iamabot
+
+- rule: Get room details
+  steps:
+  - intent: tanya_detail_ruangan
+  - action: action_retrieve_room_details
+
+- rule: Get list of rooms
+  steps:
+    - intent: tanya_list_ruangan
+    - action: action_retrieve_rooms

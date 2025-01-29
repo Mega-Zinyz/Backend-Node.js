@@ -10,13 +10,13 @@ let actionProcess = null;
 let isRasaRunning = false;
 let isActionServerRunning = false; // Flag to track action server status
 let isRasaLoading = false;  // Flag to indicate if Rasa is starting or stopping
-const modelsDir = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'models');
+const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 let lastLogFileName = getLogFileName();
 
 // Function to write log data to a file
 const writeLogToFile = (data) => {
     const currentLogFileName = getLogFileName();
-    const currentLogFilePath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'log', currentLogFileName);
+    const currentLogFilePath = path.join(__dirname, '..', 'Rasa', 'log', currentLogFileName);
     fs.appendFile(currentLogFilePath, data, (err) => {
         if (err) console.error('Error writing to log file:', err);
     });
@@ -114,7 +114,7 @@ const startRasa = async () => {
             '-m', 'rasa', 'run', 
             '--model', latestModel, 
             '--enable-api', 
-            '--endpoints', path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'endpoints.yml')
+            '--endpoints', path.join(__dirname, '..', 'Rasa', 'endpoints.yml')
         ], {
             shell: true,
             stdio: ['ignore', 'pipe', 'pipe'],
@@ -159,8 +159,8 @@ const startActionServer = async () => {
 
     try {
         // Use path.join to construct the correct paths
-        const cwdPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa');
-        const pythonPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa');
+        const cwdPath = path.join(__dirname, '..', 'Rasa');
+        const pythonPath = path.join(__dirname, '..', 'Rasa');
 
         // Pass the PYTHONPATH environment variable along with the command
         actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], { // removed const

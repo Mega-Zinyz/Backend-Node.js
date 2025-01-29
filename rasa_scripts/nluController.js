@@ -11,7 +11,7 @@ let isRasaLoading = false;
 
 // Function to load nlu.yml file
 function loadNLUData() {
-    const nluFilePath = path.resolve(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data', 'nlu.yml');
+    const nluFilePath = path.resolve(__dirname, '..', 'Rasa', 'data', 'nlu.yml');
     if (fs.existsSync(nluFilePath)) {
         try {
             const nluData = yaml.load(fs.readFileSync(nluFilePath, 'utf8'));
@@ -28,7 +28,7 @@ function loadNLUData() {
 
 // Clear the nlu.yml file
 const clearNLUFile = async () => {
-    const nluFilePath = path.resolve(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data', 'nlu.yml');
+    const nluFilePath = path.resolve(__dirname, '..', 'Rasa', 'data', 'nlu.yml');
     const clearedData = {
         version: '3.1',
         nlu: []
@@ -113,7 +113,7 @@ const exportNLUToYAML = async () => {
     });
 
     const formattedYamlStr = updatedYamlStr.replace(/^version: .+/, match => `${match}\n`);
-    const nluFilePath = path.resolve(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data', 'nlu.yml');
+    const nluFilePath = path.resolve(__dirname, '..', 'Rasa', 'data', 'nlu.yml');
 
     try {
         await fs.promises.writeFile(nluFilePath, formattedYamlStr);
@@ -155,12 +155,12 @@ const trainRasaModel = async () => {
         console.log(`Rasa executable found at: ${rasaPath}`);
 
         // Define the path to the custom Rasa training configuration (if any)
-        const configPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'config.yml');
-        const domainPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'domain.yml');
-        const dataPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'data'); // Assuming your data is under 'data'
+        const configPath = path.join(__dirname, '..', 'Rasa', 'config.yml');
+        const domainPath = path.join(__dirname, '..', 'Rasa', 'domain.yml');
+        const dataPath = path.join(__dirname, '..', 'Rasa', 'data'); // Assuming your data is under 'data'
         
         // Define the output path where the trained model will be saved
-        const outputPath = path.join(__dirname, '..', 'Rasa-Framework', 'Rasa', 'models');
+        const outputPath = path.join(__dirname, '..', 'Rasa', 'models');
 
         // Execute the `rasa train` command with the specified paths for configuration, domain, data, and output
         const trainProcess = spawn(rasaPath, [
