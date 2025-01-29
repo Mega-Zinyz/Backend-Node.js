@@ -29,8 +29,5 @@ RUN npm install
 # Salin seluruh kode aplikasi Node.js ke dalam container
 COPY . /app/
 
-# Expose port untuk Node.js (misalnya 3000)
-EXPOSE 3000
-
 # Menjalankan aplikasi Node.js (server.js atau file lainnya)
 CMD ["node", "server.js"]
