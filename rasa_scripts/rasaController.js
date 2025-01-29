@@ -10,6 +10,8 @@ let actionProcess = null;
 let isRasaRunning = false;
 let isActionServerRunning = false;
 let isRasaLoading = false;  // Flag to indicate if Rasa is starting or stopping
+let rasaPID = null;
+let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 let lastLogFileName = getLogFileName();
 
@@ -46,43 +48,30 @@ const isPortInUse = (port) => {
     });
 };
 
-function killProcessOnPort(port) {
-    // Try using netstat first, as ss might not be available
-    const findProcessCommand = process.platform === 'win32'
-        ? `netstat -ano | findstr :${port}`
-        : `netstat -tuln | grep :${port}`;  // Use netstat instead of ss for fallback
+const gracefulShutdown = (pid) => {
+    if (!pid) return;
 
-    exec(findProcessCommand, (err, stdout, stderr) => {
-        if (err) {
-            console.error(`Error finding process: ${stderr}`);
-            return;
-        }
+    try {
+        // Attempt graceful shutdown first
+        process.kill(pid, 'SIGTERM');  // This asks the process to terminate gracefully
+        console.log(`Sent SIGTERM to process ${pid}`);
+    } catch (err) {
+        console.error(`Failed to send SIGTERM to process ${pid}: ${err.message}`);
+        // If SIGTERM fails or process does not terminate, use SIGKILL
+        process.kill(pid, 'SIGKILL');
+        console.log(`Force killed process ${pid}`);
+    }
+};
 
-        if (!stdout) {
-            console.log(`No processes found on port ${port}.`);
-            return;
-        }
+const killProcessOnPort = () => {
+    if (rasaPID) {
+        gracefulShutdown(rasaPID);
+    }
 
-        const lines = stdout.trim().split('\n');
-        lines.forEach(line => {
-            const parts = line.trim().split(/\s+/);
-            const pid = parts[parts.length - 1]; // Last part is the PID
-            if (parts.includes('LISTEN')) {
-                const killCommand = process.platform === 'win32'
-                    ? `taskkill /PID ${pid} /F`
-                    : `kill -9 ${pid}`;  // Use kill -9 to terminate process
-
-                exec(killCommand, (killErr, killStdout, killStderr) => {
-                    if (killErr) {
-                        console.error(`Error killing process ${pid}: ${killStderr}`);
-                    } else {
-                        console.log(`Killed process ${pid} on port ${port}`);
-                    }
-                });
-            }
-        });
-    });
-}
+    if (actionServerPID) {
+        gracefulShutdown(actionServerPID);
+    }
+};
 
 const startRasa = async () => {
     if (isRasaRunning || isRasaLoading) {
@@ -119,7 +108,8 @@ const startRasa = async () => {
             shell: true,
             stdio: ['ignore', 'pipe', 'pipe'],
         });
-                
+
+        rasaPID = rasaProcess.pid;
         isRasaRunning = true;
         console.log(`Rasa server started successfully with PID: ${rasaProcess.pid}`);
         writeLogToFile(`Rasa server started successfully with PID: ${rasaProcess.pid}\n`);
@@ -159,6 +149,7 @@ const startActionServer = async () => {
         const cwdPath = path.join(__dirname, '..', 'Rasa');
         const pythonPath = path.join(__dirname, '..', 'Rasa');
 
+        actionServerPID = actionProcess.pid;
         actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
             shell: true,
             cwd: cwdPath,
