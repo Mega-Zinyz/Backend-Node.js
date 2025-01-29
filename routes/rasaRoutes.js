@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const { startRasa, stopRasa, restartRasa, getRasaProcess } = require('../rasa_scripts/rasaController');
 const path = require('path');
