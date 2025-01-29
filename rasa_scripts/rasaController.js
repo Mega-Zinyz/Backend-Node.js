@@ -38,6 +38,12 @@ const getLatestModel = () => {
     // Jika tidak ada file model, lempar error
     if (files.length === 0) throw new Error('No model files found in the directory');
 
+    // Menampilkan semua model yang ditemukan
+    console.log('Daftar model yang ditemukan:');
+    files.forEach((file, index) => {
+        console.log(`${index + 1}: ${file}`);
+    });
+
     // Mengurutkan file berdasarkan tanggal yang ada di nama file (format: YYYYMMDD-HHMMSS)
     const latestModel = files.sort((a, b) => {
         const dateA = new Date(a.substring(0, 8) + 'T' + a.substring(9, 15) + ':00'); // Ambil tanggal dan waktu dari nama file a
