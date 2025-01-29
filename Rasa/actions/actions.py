@@ -6,7 +6,7 @@ import logging
 import os
 
 # Default server URL if not found in environment variables
-SERVER_URL = os.getenv("SERVER_URL", "http://localhost:3000")
+SERVER_URL = os.getenv("SERVER_URL", "https://backend-nodejs-main.up.railway.app/")
 
 def generate_image_url(filename: str) -> str:
     """
