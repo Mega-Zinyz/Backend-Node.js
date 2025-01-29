@@ -1,6 +1,11 @@
 # Gunakan Python 3.10 sebagai base image
 FROM python:3.10-slim
 
+# Buat pengguna dan direktori untuk Rasa
+RUN adduser --disabled-password --gecos "" rasauser && \
+    mkdir -p /app && \
+    chown rasauser:rasauser /app
+
 # Set direktori kerja untuk Python
 WORKDIR /app
 
@@ -29,5 +34,11 @@ RUN npm install
 # Salin seluruh kode aplikasi Node.js ke dalam container
 COPY . /app/
 
-# Menjalankan aplikasi Node.js (server.js atau file lainnya)
-CMD ["node", "server.js"]
+# Ubah kepemilikan folder kerja ke pengguna rasauser
+RUN chown -R rasauser:rasauser /app
+
+# Jalankan aplikasi Node.js dengan pengguna rasauser
+USER rasauser
+
+# Tidak perlu lagi menjalankan Rasa di sini, karena dikendalikan oleh Node.js
+CMD ["npm", "start"]
