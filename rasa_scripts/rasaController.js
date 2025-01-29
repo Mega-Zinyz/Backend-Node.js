@@ -15,7 +15,7 @@ let isActionServerRunning = false;
 let isRasaLoading = false;  // Flag to indicate if Rasa is starting or stopping
 let rasaPID = null;
 let actionServerPID = null;
-const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
+const modelsDir = path.join(__dirname, '..', 'models');
 let lastLogFileName = getLogFileName();
 
 // Function to write log data to a file
