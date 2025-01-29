@@ -34,12 +34,12 @@ def fetch_rooms():
         query = "SELECT name, description, imageUrl FROM rooms"
         cursor.execute(query)
         rooms = cursor.fetchall()  # Mengambil data dalam bentuk list of tuples
+        print(f"Fetched rooms: {rooms}")  # Log data ruangan yang didapat
         return rooms  # Mengembalikan data ruangan
     except Exception as e:
         print(f"Error fetching rooms: {e}")
         return []  # Mengembalikan list kosong jika terjadi error
     finally:
-        # Pastikan cursor dan koneksi ditutup dengan baik
         if cursor:
             cursor.close()
         if conn:
