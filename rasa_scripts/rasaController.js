@@ -46,8 +46,9 @@ const getLatestModel = () => {
 
     // Mengurutkan file berdasarkan tanggal yang ada di nama file (format: YYYYMMDD-HHMMSS)
     const latestModel = files.sort((a, b) => {
-        const dateA = new Date(a.substring(0, 8) + 'T' + a.substring(9, 15) + ':00'); // Ambil tanggal dan waktu dari nama file a
-        const dateB = new Date(b.substring(0, 8) + 'T' + b.substring(9, 15) + ':00'); // Ambil tanggal dan waktu dari nama file b
+        // Parse tanggal dengan lebih baik menggunakan format YYYYMMDD-HHMMSS
+        const dateA = new Date(a.slice(0, 4), a.slice(4, 6) - 1, a.slice(6, 8), a.slice(9, 11), a.slice(11, 13), a.slice(13, 15));
+        const dateB = new Date(b.slice(0, 4), b.slice(4, 6) - 1, b.slice(6, 8), b.slice(9, 11), b.slice(11, 13), b.slice(13, 15));
         return dateB - dateA; // Urutkan dari yang terbaru
     })[0];
 
