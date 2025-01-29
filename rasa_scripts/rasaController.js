@@ -180,8 +180,8 @@ const startActionServer = async () => {
         const cwdPath = path.join(__dirname, '..', 'Rasa');
         const pythonPath = path.join(__dirname, '..', 'Rasa');
 
-        actionServerPID = actionProcess.pid;
-        actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
+        // Inisialisasi actionProcess sebelum menggunakan actionProcess.pid
+        const actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
             shell: true,
             cwd: cwdPath,
             env: { 
@@ -191,6 +191,7 @@ const startActionServer = async () => {
             stdio: ['ignore', 'pipe', 'pipe'],
         });
 
+        actionServerPID = actionProcess.pid; // Sekarang actionProcess.pid dapat diakses
         isActionServerRunning = true;
         console.log(`Rasa action server started successfully with PID: ${actionProcess.pid}`);
 
