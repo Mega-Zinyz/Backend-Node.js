@@ -134,8 +134,7 @@ const startRasa = async () => {
             '--model', latestModel, 
             '--enable-api', 
             '--port', port, // Pastikan port disebutkan di sini
-            '--endpoints', path.join(__dirname, '..', 'Rasa', 'endpoints.yml'),
-            '--config', path.join(__dirname, '..', 'Rasa', 'config.yml')
+            '--endpoints', path.join(__dirname, '..', 'Rasa', 'endpoints.yml')
         ], {
             shell: true,
             stdio: ['ignore', 'pipe', 'pipe'],
