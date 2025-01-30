@@ -8,17 +8,10 @@ const db = require('../db/db');
 // Set up multer for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        const dir = path.join(__dirname, 'assets', 'room_img');
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });  // Create directory if it doesn't exist
-            console.log('Directory created:', dir);
-        }
-        cb(null, dir);  // Set destination folder
+        cb(null, path.join(__dirname, '../assets/room_img')); // Directory for profile images
     },
     filename: (req, file, cb) => {
-        const filename = Date.now() + path.extname(file.originalname); // Use timestamp for filename
-        console.log('File name set to:', filename);
-        cb(null, filename); // Set the filename
+        cb(null, Date.now() + path.extname(file.originalname)); // Append timestamp to filename
     }
 });
 
