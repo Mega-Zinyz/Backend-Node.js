@@ -185,7 +185,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
 
         // Delete old image if a new one is uploaded
         if (imageUrl && oldImagePath) {
-            const fullImagePath = path.join(__dirname, '..', 'room_img', oldImagePath);
+            const fullImagePath = path.join(__dirname, '..', 'assets', oldImagePath);
             console.log('Deleting old image:', fullImagePath);
             await fs.promises.unlink(fullImagePath); // Delete the old image
             console.log('Old image deleted successfully');
