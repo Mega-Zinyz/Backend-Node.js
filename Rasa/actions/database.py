@@ -1,6 +1,9 @@
 import mysql.connector
 import os
 from mysql.connector import Error
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_db_connection():
     # Mengakses environment variables langsung dari Railway
