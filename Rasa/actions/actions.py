@@ -15,9 +15,7 @@ def generate_image_url(filename: str) -> str:
     """
     # Hapus slash tambahan jika ada
     filename = filename.lstrip("/")
-    
     return f"{SERVER_URL.rstrip('/')}/{filename}"
-
 
 class ActionSetDynamicRoomEntities(Action):
     def name(self) -> str:
@@ -55,32 +53,10 @@ class ActionRetrieveRooms(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         try:
+            # Ambil data ruangan yang tersedia
             rooms = fetch_rooms()  # Ambil data ruangan
-            print(f"Rooms fetched: {rooms}")  # Tambahkan log ini untuk memastikan data ada
-            if rooms:
-                response = "Berikut daftar ruangan yang tersedia:\n\n"
-                for name, description, image_url in rooms:
-                    # Generate image URL dynamically
-                    full_image_url = generate_image_url(image_url)
-                    # Format response dynamically
-                    response += (
-                        f"📍 <strong>{name}</strong><br>"
-                        f"<img src='{full_image_url}' width='230' alt='Gambar'/><br>"
-                        f"📝 {description}<br>\n\n"
-                    )
-                dispatcher.utter_message(text=response)
-            else:
-                dispatcher.utter_message(text="Maaf, tidak ada ruangan yang tersedia saat ini.")
-        except Exception as e:
-            logging.error(f"Failed to retrieve rooms: {e}", exc_info=True)
-            dispatcher.utter_message(text="Terjadi kesalahan saat mengambil daftar ruangan.")
-        return []
-    def name(self) -> str:
-        return "action_retrieve_rooms"
+            print(f"Rooms fetched: {rooms}")  # Menambahkan log ini untuk memastikan data ada
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        try:
-            rooms = fetch_rooms()  # Ambil data ruangan
             if rooms:
                 response = "Berikut daftar ruangan yang tersedia:\n\n"
                 for name, description, image_url in rooms:

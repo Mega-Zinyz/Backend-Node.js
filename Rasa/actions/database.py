@@ -34,7 +34,8 @@ def fetch_rooms():
             return []  # Mengembalikan list kosong jika koneksi gagal
 
         cursor = conn.cursor()
-        query = "SELECT name, description, imageUrl FROM rooms"
+        # Memperbarui query untuk hanya mengambil ruangan yang tersedia
+        query = "SELECT name, description, imageUrl FROM rooms WHERE available = 1"
         cursor.execute(query)
         rooms = cursor.fetchall()  # Mengambil data dalam bentuk list of tuples
         print(f"Fetched rooms: {rooms}")  # Log data ruangan yang didapat
@@ -57,7 +58,8 @@ def fetch_room_details(room_name: str):
             return None  # Kembalikan None jika koneksi gagal
 
         cursor = connection.cursor()
-        query = "SELECT name, description, imageUrl FROM rooms WHERE name = %s"
+        # Memperbarui query untuk hanya mengambil detail ruangan yang tersedia
+        query = "SELECT name, description, imageUrl FROM rooms WHERE name = %s AND available = 1"
         cursor.execute(query, (room_name,))
         room_details = cursor.fetchone()  # Mengambil satu baris data
 
