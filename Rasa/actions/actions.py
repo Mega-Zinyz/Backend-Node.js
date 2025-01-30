@@ -11,11 +11,12 @@ SERVER_URL = os.getenv("SERVER_URL", "https://backend-nodejs-main.up.railway.app
 def generate_image_url(filename: str) -> str:
     """
     Generates a complete URL for an image given its filename.
-    Ensures the URL starts with the correct base path and filename.
+    Ensures the URL starts correctly.
     """
-    if not filename.startswith("room_img/"):
-        filename = f"room_img/{filename}"
-    return f"{SERVER_URL}{filename}"
+    # Hapus slash tambahan jika ada
+    filename = filename.lstrip("/")
+    
+    return f"{SERVER_URL.rstrip('/')}/{filename}"
 
 
 class ActionSetDynamicRoomEntities(Action):
