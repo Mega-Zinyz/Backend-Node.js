@@ -13,8 +13,8 @@ def generate_image_url(filename: str) -> str:
     Generates a complete URL for an image given its filename.
     Ensures the URL starts with the correct base path and filename.
     """
-    if not filename.startswith("/room_img/"):
-        filename = f"/room_img/{filename}"
+    if not filename.startswith("room_img/"):
+        filename = f"room_img/{filename}"
     return f"{SERVER_URL}{filename}"
 
 
