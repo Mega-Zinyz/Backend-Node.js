@@ -58,7 +58,7 @@ router.post('/', upload.single('image'), async (req, res) => {
         const { name, description, available } = req.body;
         console.log('Received body:', { name, description, available });
 
-        const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
+        const imageUrl = req.file ? `../assets/${req.file.filename}` : null;
         console.log('Image URL set to:', imageUrl);
 
         // Ensure name and description are not empty
@@ -112,7 +112,7 @@ router.delete('/:id', async (req, res) => {
 
         // Delete the image if it exists
         if (imagePath) {
-            const fullImagePath = path.join(__dirname, '/room_img/', imagePath);
+            const fullImagePath = path.join(__dirname, '../assets/', imagePath);
             console.log('Deleting image:', fullImagePath);
             await fs.promises.unlink(fullImagePath); // Delete image file
             console.log('Image deleted successfully');
@@ -148,7 +148,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', upload.single('image'), async (req, res) => {
     const roomId = req.params.id;
     const { name, description, available } = req.body;
-    const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
+    const imageUrl = req.file ? `../assets/${req.file.filename}` : null;
     console.log('Received body for update:', { name, description, available });
     console.log('Received file for update:', req.file);
 
@@ -185,7 +185,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
 
         // Delete old image if a new one is uploaded
         if (imageUrl && oldImagePath) {
-            const fullImagePath = path.join(__dirname, '/room_img/', oldImagePath);
+            const fullImagePath = path.join(__dirname, '../assets/', oldImagePath);
             console.log('Deleting old image:', fullImagePath);
             await fs.promises.unlink(fullImagePath); // Delete the old image
             console.log('Old image deleted successfully');
