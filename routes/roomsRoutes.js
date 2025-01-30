@@ -112,7 +112,7 @@ router.delete('/:id', async (req, res) => {
 
         // Delete the image if it exists
         if (imagePath) {
-            const fullImagePath = path.join(__dirname, '..', 'room_img', imagePath);
+            const fullImagePath = path.join(__dirname, '..', 'assets', imagePath);
             console.log('Deleting image:', fullImagePath);
             await fs.promises.unlink(fullImagePath); // Delete image file
             console.log('Image deleted successfully');
