@@ -34,7 +34,7 @@ const upload = multer({
 // Get all rooms
 router.get('/', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT id, name, description, imageUrl FROM rooms');
+        const [rows] = await db.query('SELECT id, name, description, imageUrl, available FROM rooms');
         res.json(rows);
     } catch (err) {
         console.error('Error fetching rooms:', err);
@@ -45,15 +45,27 @@ router.get('/', async (req, res) => {
 // Add a new room with image upload
 router.post('/', upload.single('image'), async (req, res) => {
     try {
-        const { name, description } = req.body;
+        const { name, description, available } = req.body; // Getting 'available' from request
         const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
 
+        // Pastikan name dan description tidak kosong
         if (!name || !description) {
             return res.status(400).json({ message: 'Name and description are required' });
         }
 
-        const [result] = await db.query('INSERT INTO rooms (name, description, imageUrl) VALUES (?, ?, ?)', [name, description, imageUrl]);
-        res.status(201).json({ id: result.insertId, name, description, imageUrl });
+        // Check if the room already exists by name
+        const [existingRoom] = await db.query('SELECT id FROM rooms WHERE name = ?', [name]);
+        if (existingRoom.length > 0) {
+            return res.status(400).json({ message: 'A room with this name already exists' });
+        }
+
+        // If 'available' is not provided, set it to 1 by default (true)
+        const roomAvailable = available !== undefined ? available : 1;
+
+        // Insert the new room
+        const [result] = await db.query('INSERT INTO rooms (name, description, imageUrl, available) VALUES (?, ?, ?, ?)', [name, description, imageUrl, roomAvailable]);
+        
+        res.status(201).json({ id: result.insertId, name, description, imageUrl, available: roomAvailable });
     } catch (err) {
         console.error('Error adding room:', err);
         res.status(500).send('Server error');
@@ -114,6 +126,12 @@ router.put('/:id', upload.single('image'), async (req, res) => {
             return res.status(400).json({ message: 'Name and description are required' });
         }
 
+        // Cek apakah nama ruangan baru sudah ada
+        const [existingRoom] = await db.query('SELECT * FROM rooms WHERE name = ? AND id != ?', [name, roomId]);
+        if (existingRoom.length > 0) {
+            return res.status(400).json({ message: 'Room with this name already exists' });
+        }
+
         const [roomResults] = await db.query('SELECT * FROM rooms WHERE id = ?', [roomId]);
         if (roomResults.length === 0) {
             return res.status(404).json({ message: 'Room not found' });
@@ -122,7 +140,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
         const room = roomResults[0];
         const oldImagePath = room.imageUrl;
 
-        await db.query('UPDATE rooms SET name = ?, description = ?, imageUrl = ? WHERE id = ?', [name, description, imageUrl || oldImagePath, roomId]);
+        await db.query('UPDATE rooms SET name = ?, description = ?, imageUrl = ?, available = ? WHERE id = ?', [name, description, imageUrl || oldImagePath, room.available, roomId]);
 
         if (imageUrl && oldImagePath) {
             const fullImagePath = path.join(__dirname, '../../FrontEnd-Chatbot/public', oldImagePath);
