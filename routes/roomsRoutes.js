@@ -46,23 +46,23 @@ router.get('/', async (req, res) => {
 router.post('/', upload.single('image'), async (req, res) => {
     try {
         const { name, description, available } = req.body; // Getting 'available' from request
-        const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
+        const imageUrl = req.file ? `../assets/room_img/${req.file.filename}` : null;
 
         // Pastikan name dan description tidak kosong
         if (!name || !description) {
             return res.status(400).json({ message: 'Name and description are required' });
         }
 
-        // Check if the room already exists by name
+        // Cek apakah ruangan sudah ada berdasarkan nama
         const [existingRoom] = await db.query('SELECT id FROM rooms WHERE name = ?', [name]);
         if (existingRoom.length > 0) {
             return res.status(400).json({ message: 'A room with this name already exists' });
         }
 
-        // If 'available' is not provided, set it to 1 by default (true)
-        const roomAvailable = available !== undefined ? available : 1;
+        // Pastikan 'available' adalah nilai 1 atau 0, jika tidak disertakan default ke 1
+        const roomAvailable = available === '0' || available === '1' ? available : '1';
 
-        // Insert the new room
+        // Insert ruangan baru
         const [result] = await db.query('INSERT INTO rooms (name, description, imageUrl, available) VALUES (?, ?, ?, ?)', [name, description, imageUrl, roomAvailable]);
         
         res.status(201).json({ id: result.insertId, name, description, imageUrl, available: roomAvailable });
@@ -88,7 +88,7 @@ router.delete('/:id', async (req, res) => {
         await db.query('DELETE FROM rooms WHERE id = ?', [roomId]);
 
         if (imagePath) {
-            const fullImagePath = path.join(__dirname, '../assets/img/', imagePath);
+            const fullImagePath = path.join(__dirname, '../assets/room_img/', imagePath);
             await fs.promises.unlink(fullImagePath);
         }
 
@@ -118,7 +118,7 @@ router.get('/:id', async (req, res) => {
 // Update room details and image
 router.put('/:id', upload.single('image'), async (req, res) => {
     const roomId = req.params.id;
-    const { name, description } = req.body;
+    const { name, description, available } = req.body;
     const imageUrl = req.file ? `/room_img/${req.file.filename}` : null;
 
     try {
@@ -126,7 +126,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
             return res.status(400).json({ message: 'Name and description are required' });
         }
 
-        // Cek apakah nama ruangan baru sudah ada
+        // Cek apakah nama ruangan sudah ada
         const [existingRoom] = await db.query('SELECT * FROM rooms WHERE name = ? AND id != ?', [name, roomId]);
         if (existingRoom.length > 0) {
             return res.status(400).json({ message: 'Room with this name already exists' });
@@ -140,10 +140,13 @@ router.put('/:id', upload.single('image'), async (req, res) => {
         const room = roomResults[0];
         const oldImagePath = room.imageUrl;
 
-        await db.query('UPDATE rooms SET name = ?, description = ?, imageUrl = ?, available = ? WHERE id = ?', [name, description, imageUrl || oldImagePath, room.available, roomId]);
+        // Pastikan 'available' adalah nilai 1 atau 0, jika tidak disertakan, gunakan nilai sebelumnya
+        const roomAvailable = available === '0' || available === '1' ? available : room.available;
+
+        await db.query('UPDATE rooms SET name = ?, description = ?, imageUrl = ?, available = ? WHERE id = ?', [name, description, imageUrl || oldImagePath, roomAvailable, roomId]);
 
         if (imageUrl && oldImagePath) {
-            const fullImagePath = path.join(__dirname, '../../FrontEnd-Chatbot/public', oldImagePath);
+            const fullImagePath = path.join(__dirname, '../assets/room_img/', oldImagePath);
             await fs.promises.unlink(fullImagePath);
         }
 
