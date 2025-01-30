@@ -7,10 +7,10 @@ load_dotenv()
 
 def get_db_connection():
     # Mengakses environment variables langsung dari Railway
-    db_host = os.getenv('DB_HOST')
-    db_user = os.getenv('DB_USER')
-    db_password = os.getenv('DB_PASSWORD')
-    db_name = os.getenv('DB_NAME')
+    db_host = os.getenv('MYSQLHOST')
+    db_user = os.getenv('MYSQLUSER')
+    db_password = os.getenv('MYSQLPASSWORD')
+    db_name = os.getenv('MYSQLDATABASE')
 
     try:
         # Koneksi ke database MySQL menggunakan variabel dari environment
