@@ -86,11 +86,4 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
-// Start the server
-app.listen(PORT, () => {
-    const pid = process.pid;
-    const serverUrl = process.env.RAILWAY_STATIC_URL;
-    console.log(`Server is running on ${serverUrl} with PID: ${pid}`);
-    logger.info(`Server started on ${serverUrl} with PID: ${pid}`);
-    logger.info(`Environment: ${environment}`);
-});
+module.exports = app;

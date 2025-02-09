@@ -2,7 +2,12 @@ const jwt = require('jsonwebtoken');
 const blacklist = new Set(); // Blacklist sederhana (gunakan Redis untuk produksi)
 
 function authenticateJWT(req, res, next) {
-    const token = req.headers['authorization']?.split(' ')[1];
+    const authHeader = req.headers['authorization'];
+    if (!authHeader) {
+        return res.status(401).json({ error: 'Authorization header is missing' });
+    }
+
+    const token = authHeader.split(' ')[1];
 
     if (!token || blacklist.has(token)) {
         return res.status(403).json({ error: 'Token is invalid or revoked' });

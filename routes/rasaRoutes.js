@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const { startRasa, stopRasa, restartRasa, getRasaProcess } = require('../rasa_scripts/rasaController');
 const path = require('path');
@@ -8,10 +6,11 @@ const axios = require('axios');
 
 const router = express.Router();
 
+require('dotenv').config();
+
 // Define the log directory paths
 const logDirectory = process.env.LOG_DIR || path.join(__dirname, '../logs');
 const logDirectoryToday = process.env.LOG_TODAY_DIR || path.join(__dirname, '../Rasa/log');
-const rasaUrl = process.env.RASA_URL;
 
 // Route to send messages to Rasa
 router.post('/message', async (req, res) => {
@@ -22,7 +21,7 @@ router.post('/message', async (req, res) => {
             return res.status(400).send('Missing sender or message.');
         }
 
-        const rasaResponse = await axios.post(`${rasaUrl}/webhooks/rest/webhook`, {
+        const rasaResponse = await axios.post(`${process.env.RASA_URL}/webhooks/rest/webhook`, {
             sender,
             message,
         });
@@ -119,7 +118,7 @@ router.get('/status', async (req, res) => {
     const rasaProcess = getRasaProcess();
     if (rasaProcess) {
         try {
-            const response = await axios.get(`${rasaUrl}/status`, { timeout: 5000 }); // 5-second timeout
+            const response = await axios.get(`${process.env.RASA_URL}/status`, { timeout: 5000 }); // 5-second timeout
             if (response.data && response.data.model_file) {
                 return res.json({
                     running: true,
