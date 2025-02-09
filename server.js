@@ -89,7 +89,7 @@ app.use((err, req, res, next) => {
 // Start the server
 app.listen(PORT, () => {
     const pid = process.pid;
-    const serverUrl = process.env.RAILWAY_STATIC_URL;
+    const serverUrl = process.env.RAILWAY_BACKEND_URL;
     console.log(`Server is running on ${serverUrl} with PID: ${pid}`);
     logger.info(`Server started on ${serverUrl} with PID: ${pid}`);
     logger.info(`Environment: ${environment}`);

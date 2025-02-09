@@ -66,3 +66,7 @@
 2025-02-09T12:34:59.609Z [INFO]: Environment: test
 2025-02-09T12:34:59.805Z [INFO]: Server started on backend-nodejs-main.up.railway.app with PID: 16388
 2025-02-09T12:34:59.812Z [INFO]: Environment: test
+2025-02-09T12:40:41.910Z [INFO]: Server started on backend-nodejs-main.up.railway.app with PID: 5896
+2025-02-09T12:40:41.913Z [INFO]: Environment: test
+2025-02-09T12:40:41.989Z [INFO]: Server started on backend-nodejs-main.up.railway.app with PID: 14684
+2025-02-09T12:40:41.993Z [INFO]: Environment: test
