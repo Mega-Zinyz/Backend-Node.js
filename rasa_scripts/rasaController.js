@@ -253,24 +253,17 @@ const checkRasaReady = async () => {
                 clearInterval(interval);
                 console.log('✅ Rasa server is online.');
                 isRasaLoading = false;
-            } else {
+            } else if (attempts % 5 === 0) { // Log hanya setiap 5 percobaan
                 console.info(`ℹ️ Rasa server is running but model is not ready (attempt ${attempts}/${maxAttempts})`);
             }
         } catch (error) {
-            if (error.response) {
-                // Server merespons dengan kode status di luar 2xx
-                console.warn(`⚠️ Warning: Rasa server responded with an error (attempt ${attempts}/${maxAttempts}):`, error.response.data);
-            } else if (error.request) {
-                // Permintaan dikirim tetapi tidak ada respons (misalnya server mati)
-                console.error(`❌ Error: No response from Rasa server (attempt ${attempts}/${maxAttempts}).`);
-            } else {
-                // Kesalahan lain (misalnya kesalahan konfigurasi)
-                console.error(`❌ Unexpected error while checking Rasa status:`, error.message);
+            if (attempts % 5 === 0) { // Hanya log setiap 5 percobaan
+                console.warn(`⚠️ No response from Rasa server (attempt ${attempts}/${maxAttempts}). Retrying...`);
             }
 
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
-                console.error('❌ Failed to start Rasa server: Rasa server did not start within the expected time.');
+                console.error('❌ Failed to start Rasa server: No response received after maximum attempts.');
                 isRasaLoading = false;
             }
         }
