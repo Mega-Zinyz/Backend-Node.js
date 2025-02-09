@@ -1,4 +1,4 @@
-name: Run Specific Test on GitHub Actions
+name: Run Full Test with Railway Environment
 
 on: [push, pull_request]
 
@@ -10,5 +10,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      # Install dependencies
       - run: npm ci
-      - run: npm test
+
+      # Set up Railway environment secrets
+      - name: Set up Railway environment
+        run: |
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+          echo "RAILWAY_API_KEY=${{ secrets.RAILWAY_API_KEY }}" >> $GITHUB_ENV
+          echo "RAILWAY_PROJECT_URL=${{ secrets.RAILWAY_PROJECT_URL }}" >> $GITHUB_ENV
+
+      # Optionally, deploy to Railway after successful tests
+      - name: Deploy to Railway
+        run: |
+          railway login --apiKey ${{ secrets.RAILWAY_API_KEY }}
+          railway up --project ${{ secrets.RAILWAY_PROJECT_URL }}
+
+      # Run tests (including white-box tests)
+      - name: Run specific tests
+        run: npm test
