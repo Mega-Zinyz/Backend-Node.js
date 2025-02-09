@@ -136,7 +136,7 @@ const startRasa = async () => {
         return;
     }
 
-    const port = process.env.RASA_PORT || 5005;
+    const port = process.env.RASA_PORT;
     console.log(`Checking if port ${port} is available...`); // Tambahkan ini
 
     const inUse = await isPortInUse(port);
@@ -251,25 +251,17 @@ const checkRasaReady = async () => {
             console.log('Response data:', response.data); 
             if (response.data && response.data.model_file) {
                 clearInterval(interval);
-                console.log('Rasa server is online.');
+                console.log('✅ Rasa server is online.');
                 isRasaLoading = false;
             }
-        } catch (error) {
-            console.info(`🔍 Attempt ${attempts}: Rasa status check failed. Retrying...`);
-            
-            if (error.response) {
-                console.warn(`⚠️ Response error:`, error.response.data);
-            } else {
-                console.warn(`⚠️ Network or other error:`, error.message);
-            }
-        
+        } catch (log) {
+            console.warn(`⚠️ Warning: Rasa server is not ready yet (attempt ${attempts}):`, log.response ? log.response.data : log.message);
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
                 console.error('❌ Failed to start Rasa server: Rasa server did not start within the expected time.');
                 isRasaLoading = false;
             }
         }
-        
     }, checkInterval);
 };
 
@@ -283,7 +275,7 @@ const stopRasa = async () => {
         console.log("Stopping Rasa server...");
         isRasaLoading = true;
 
-        await killProcessOnPort(process.env.RASA_PORT || 5005);
+        await killProcessOnPort(process.env.RASA_PORT);
         isRasaRunning = false;
         console.log("Rasa server stopped.");
     } else {
@@ -306,7 +298,7 @@ const restartRasa = async () => {
     console.log("Restarting Rasa server...");
     await stopRasa();
 
-    const port = process.env.RASA_PORT || 5005;
+    const port = process.env.RASA_PORT;
     const isPortFree = await waitForPortToBeFree(port);
 
     if (!isPortFree) {
