@@ -174,4 +174,10 @@ describe('Auth Routes', () => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     expect(decoded.username).toBe('zero');
   });
+
+  afterAll(async () => {
+    if (db.end) {
+      await db.end(); // Hanya jalankan jika `db.end` tersedia (untuk koneksi database nyata)
+    }
+  });
 });

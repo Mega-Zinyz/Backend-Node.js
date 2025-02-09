@@ -2,6 +2,13 @@ const request = require('supertest');
 const app = require('../../server'); // Pastikan ini mengarah ke server Express utama
 require('dotenv').config(); // Load variabel lingkungan
 
+// Mock database query (HARUS di luar describe)
+jest.mock('../../db/db', () => ({
+  query: jest.fn()
+}));
+
+const db = require('../../db/db');
+
 describe('Rasa Routes (Hosted on Railway)', () => {
   let server;
 
@@ -17,8 +24,7 @@ describe('Rasa Routes (Hosted on Railway)', () => {
 
   // 1️⃣ Test Koneksi ke Rasa
   it('seharusnya berhasil terhubung ke Rasa di Railway', async () => {
-    const res = await request(app)
-      .get('/api/rasa/status'); // Pastikan ada endpoint ini di backend
+    const res = await request(app).get('/api/rasa/status'); // Pastikan ada endpoint ini di backend
 
     expect(res.statusCode).toBe(200);
     expect(res.body.state).toBe('running');
@@ -31,11 +37,19 @@ describe('Rasa Routes (Hosted on Railway)', () => {
       .post('/api/rasa/message')
       .send({
         "sender": "halo",
-        "message": "daftar ruangan" 
+        "message": "daftar ruangan"
       });
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveProperty('response'); // Pastikan ada respons
     console.log('Rasa Message Response:', res.body);
   });
+
+  // Menutup koneksi database setelah semua tes selesai
+  afterAll(async () => {
+    if (db.end) {
+      await db.end(); // Hanya jalankan jika `db.end` tersedia (untuk koneksi database nyata)
+    }
+  });
+
 });
