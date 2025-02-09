@@ -24,7 +24,7 @@ describe('Rasa Routes (Hosted on Railway)', () => {
       .get('/api/rasa/status'); // Pastikan ada endpoint ini di backend
 
     expect(res.statusCode).toBe(200);
-    expect(res.body.status).toBe('running');
+    expect(res.body.state).toBe('running');
     console.log('Rasa Status Response:', res.body);
   });
 
@@ -32,7 +32,10 @@ describe('Rasa Routes (Hosted on Railway)', () => {
   it('seharusnya berhasil mengirim pesan dan menerima respons dari Rasa', async () => {
     const res = await request(app)
       .post('/api/rasa/message')
-      .send({ message: 'Halo!' });
+      .send({
+        "sender": "halo",
+        "message": "daftar ruangan" 
+      });
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveProperty('response'); // Pastikan ada respons

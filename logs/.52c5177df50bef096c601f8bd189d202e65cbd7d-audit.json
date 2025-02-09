@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Capstone\\chatbot_messpemda\\Backend-Node.js\\logs\\.52c5177df50bef096c601f8bd189d202e65cbd7d-audit.json",
+    "files": [
+        {
+            "date": 1739097375009,
+            "name": "D:\\Capstone\\chatbot_messpemda\\Backend-Node.js\\logs\\server-2025-02-09.log",
+            "hash": "6aa6a6cdb8e75a9a078d755fdfe69bea7763d1afc869d99c8c30f5058a369aa5"
+        }
+    ],
+    "hashType": "sha256"
+}
