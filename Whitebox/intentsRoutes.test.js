@@ -7,7 +7,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    await db.end(); // ✅ Pastikan koneksi database ditutup setelah test selesai
+    await db.end(); 
 });
 
 describe("Intent Routes API", () => {
