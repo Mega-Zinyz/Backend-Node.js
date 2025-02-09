@@ -1,0 +1,77 @@
+Starting Rasa server on port 5005 with model: D:\Capstone\chatbot_messpemda\BackEnd-Chatbot\Rasa\models\20250130-134900-isomorphic-girder.tar.gz
+Rasa server started successfully on port 5005 with PID: 4492
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action : 2025-02-09 16:58:02 INFO     rasa_sdk.endpoint  - Starting action endpoint server...
+Rasa Action : 2025-02-09 16:58:02 INFO     rasa_sdk.executor  - Registered function for 'action_set_dynamic_room_entities'.
+Rasa Action : 2025-02-09 16:58:02 INFO     rasa_sdk.executor  - Registered function for 'action_retrieve_rooms'.
+2025-02-09 16:58:02 INFO     rasa_sdk.executor  - Registered function for 'action_retrieve_room_details'.
+Rasa Action : 2025-02-09 16:58:02 INFO     rasa_sdk.endpoint  - Starting plugins...
+Rasa Action : 2025-02-09 16:58:02 INFO     rasa_sdk.endpointRasa Action :   - Action endpoint is up and running on http://0.0.0.0:5055
+Starting Rasa server on port 5005 with model: D:\Capstone\chatbot_messpemda\BackEnd-Chatbot\Rasa\models\20250130-134900-isomorphic-girder.tar.gz
+Rasa server started successfully on port 5005 with PID: 9884
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\core\tracker_store.py:1044: MovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base: DeclarativeMeta = declarative_base()
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\rasa\shared\utils\validation.py:134: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\pkg_resources\__init__.py:3149: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Rasa Action : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic_cors\extension.py:39: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  SANIC_VERSION = LooseVersion(sanic_version)
+Rasa Action : 2025-02-09 17:22:22 INFO     Rasa Action : rasa_sdk.endpoint  - Starting action endpoint server...
+Rasa Action : 2025-02-09 17:22:22 INFO     rasa_sdk.executorRasa Action :   - Registered function for 'action_set_dynamic_room_entities'.
+2025-02-09 17:22:22 INFO     rasa_sdk.executor  - Registered function for 'action_retrieve_rooms'.
+2025-02-09 17:22:22 INFO     rasa_sdk.executor  - Registered function for 'action_retrieve_room_details'.
+Rasa Action : 2025-02-09 17:22:22 INFO     rasa_sdk.endpoint  - Starting plugins...
+Rasa Action : 2025-02-09 17:22:22 INFO     rasa_sdk.endpoint  - Action endpoint is up and running on http://0.0.0.0:5055
+Rasa Action : Unable to start server
+Traceback (most recent call last):
+  File "C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\sanic\server\runners.py", line 133, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1506, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5055): only one usage of each socket address (protocol/network address/port) is normally permitted
+Rasa : C:\Users\Hagga\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\lite\python\util.py:52: DeprecationWarning: jax.xla_computation is deprecated. Please use the AOT APIs.
+  from jax import xla_computation as _xla_computation
+Rasa : 2025-02-09 17:22:30 INFO     root  - Starting Rasa server on http://0.0.0.0:5005
+Rasa : 2025-02-09 17:22:30 INFO     rasa.core.processor  - Loading model D:\Capstone\chatbot_messpemda\BackEnd-Chatbot\Rasa\models\20250130-134900-isomorphic-girder.tar.gz...
