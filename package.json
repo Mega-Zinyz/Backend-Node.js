@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "test": "jest tests/authRoutes.test.js"
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^1.7.9",
