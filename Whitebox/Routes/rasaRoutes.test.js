@@ -2,9 +2,6 @@ const request = require('supertest');
 const app = require('../../server'); // Pastikan ini mengarah ke server Express utama
 require('dotenv').config(); // Load variabel lingkungan
 
-// Ambil URL Rasa dari Railway
-const rasaUrl = process.env.RASA_URL; // Pastikan env ini sudah benar
-
 describe('Rasa Routes (Hosted on Railway)', () => {
   let server;
 

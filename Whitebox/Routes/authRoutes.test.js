@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../../server'); // Pastikan ini merujuk pada file Express utama
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); // Menggunakan bcryptjs sesuai dengan penggunaan di aplikasi utama
-require('dotenv').config({ path: '../../.env' }); // Pastikan .env dibaca
+require('dotenv').config(); // Pastikan .env dibaca
 
 // Mock user for testing
 const mockUser = {
