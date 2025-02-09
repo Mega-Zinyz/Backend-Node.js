@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
@@ -23,7 +22,7 @@ const CLIENT_URL = process.env.CLIENT_URL || 'https://frontend-angular-main.up.r
 // Logging Setup
 const logDirectory = path.join(__dirname, 'logs');
 if (!fs.existsSync(logDirectory)) {
-    fs.mkdirSync(logDirectory);
+    fs.mkdirSync(logDirectory, { recursive: true });  // Ensure directories are created recursively
 }
 
 const transport = new winston.transports.DailyRotateFile({
@@ -41,8 +40,8 @@ const logger = winston.createLogger({
         winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}]: ${info.message}`)
     ),
     transports: [
-        new winston.transports.Console(),
-        transport
+        new winston.transports.Console(),  // Log to console for local development
+        transport  // Log to rotated file
     ]
 });
 
@@ -79,4 +78,4 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
-module.exports = app; // Hanya export app, tidak menjalankan server!
+module.exports = app; // Just export the app, don't run the server here

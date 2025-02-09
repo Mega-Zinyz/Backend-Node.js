@@ -119,6 +119,7 @@ router.get('/status', async (req, res) => {
     if (rasaProcess) {
         try {
             const response = await axios.get(`${process.env.RASA_URL}/status`, { timeout: 5000 }); // 5-second timeout
+
             if (response.data && response.data.model_file) {
                 return res.json({
                     running: true,
@@ -137,7 +138,23 @@ router.get('/status', async (req, res) => {
                 });
             }
         } catch (error) {
-            console.error('Error checking Rasa status:', error.message);
+            // ❌ Jangan pakai console.error untuk timeout biasa
+            if (error.code === 'ECONNABORTED' || error.message.includes('timeout')) {
+                return res.json({
+                    running: false,
+                    state: 'starting',
+                    model_file: null,
+                    model_id: null,
+                    num_active_training_jobs: 0,
+                    error: 'Rasa server is starting up...'
+                });
+            }
+
+            // 🛑 Log error hanya jika benar-benar gagal (misal: koneksi mati)
+            if (error.code !== 'ECONNREFUSED') {
+                console.error('❌ Error checking Rasa status:', error.message);
+            }
+
             return res.json({
                 running: false,
                 state: 'stopped',

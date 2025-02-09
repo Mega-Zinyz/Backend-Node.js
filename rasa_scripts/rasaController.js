@@ -266,7 +266,6 @@ const checkRasaReady = async () => {
     let attempts = 0;
     const maxAttempts = 30;
     const checkInterval = 5000;
-    let lastLogAttempt = 0;
     let lastStatus = null; // Menyimpan status terakhir
 
     const interval = setInterval(async () => {
@@ -287,19 +286,13 @@ const checkRasaReady = async () => {
                 lastStatus = "waiting"; // Simpan status terakhir
             }
         } catch (error) {
-            // Jika error terjadi setelah batas maksimum, cetak error
-            if (attempts >= maxAttempts) {
-                clearInterval(interval);
-                console.error('❌ Failed to start Rasa server: No response received after maximum attempts.');
-                isRasaLoading = false;
-                return;
-            }
+            // Jika error terjadi sebelum batas maksimum, cukup diam (silent mode)
+            if (attempts < maxAttempts) return; 
 
-            // Hanya cetak log setiap 5 percobaan jika status berubah
-            if (attempts % 5 === 0 && lastStatus !== "no-response") {
-                console.warn(`⚠️ No response from Rasa server (attempt ${attempts}/${maxAttempts}). Retrying...`);
-                lastStatus = "no-response"; // Simpan status terakhir
-            }
+            // Jika error setelah batas maksimum, baru cetak error
+            clearInterval(interval);
+            console.error('❌ Failed to start Rasa server: No response received after maximum attempts.');
+            isRasaLoading = false;
         }
     }, checkInterval);
 };

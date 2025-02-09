@@ -1,14 +1,14 @@
 const request = require('supertest');
-const app = require('../../server'); // Pastikan ini merujuk pada file Express utama
+const app = require('../server'); // Pastikan ini merujuk pada file Express utama
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); // Menggunakan bcryptjs sesuai dengan aplikasi utama
 require('dotenv').config(); // Pastikan .env dibaca
 
 // Mock database query
-jest.mock('../../db/db', () => ({
+jest.mock('../db/db', () => ({
   query: jest.fn()
 }));
-const db = require('../../db/db');
+const db = require('../db/db');
 
 // 🔹 Mock User Data
 const mockUser = {

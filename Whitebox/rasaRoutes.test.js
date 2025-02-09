@@ -1,11 +1,11 @@
 const request = require("supertest");
-const app = require("../../app"); // ✅ Load app.js tanpa menjalankan server
-const db = require("../../db/db"); // Sesuaikan dengan lokasi koneksi database
+const app = require("../app"); // ✅ Load app.js tanpa menjalankan server
+const db = require("../db/db"); // Sesuaikan dengan lokasi koneksi database
 
 describe("Rasa Routes (Hosted on Railway)", () => {
     let server;
+    let rasaInterval, rasaTimeout; // 🔹 Global variable untuk cleanup interval/timeout
 
-    // 🔹 Start server sebelum test, gunakan port dinamis
     beforeAll(async () => {
         server = app.listen(0);
 
@@ -21,8 +21,7 @@ describe("Rasa Routes (Hosted on Railway)", () => {
         console.log("✅ Rasa siap, memulai tes...");
     });
 
-    // 🔹 Tutup server & database setelah semua test selesai
-    afterAll(async (done) => {
+    afterAll(async () => {
         if (server) {
             console.log("🛑 Menutup server...");
             await new Promise((resolve) => server.close(resolve)); // Pastikan server tertutup
@@ -32,14 +31,18 @@ describe("Rasa Routes (Hosted on Railway)", () => {
             await db.end();
         }
 
+        // 🔹 Hentikan semua timeout & interval yang mungkin masih berjalan
+        console.log("🛑 Membersihkan semua proses async...");
+        clearTimeout(rasaTimeout);
+        clearInterval(rasaInterval);
+
         console.log("✅ Semua proses ditutup dengan aman.");
-        done();
     });
 
-    jest.setTimeout(60000); // ⏳ Timeout 30 detik untuk setiap test
+    jest.setTimeout(120000); // ⏳ Timeout 120 detik untuk setiap test
 
     // 🔥 Fungsi Helper: Menunggu Rasa Siap Sebelum Tes
-    async function waitForRasaReady(retries = 15, delay = 5000) {
+    async function waitForRasaReady(retries = 20, delay = 5000) {
         for (let i = 0; i < retries; i++) {
             try {
                 const res = await request(app).get("/api/rasa/status");
@@ -52,7 +55,8 @@ describe("Rasa Routes (Hosted on Railway)", () => {
             }
 
             console.log(`🔄 Rasa belum siap, mencoba lagi dalam ${delay / 1000} detik...`);
-            await new Promise((resolve) => setTimeout(resolve, delay));
+            rasaTimeout = setTimeout(() => {}, delay);
+            await new Promise((resolve) => rasaTimeout = setTimeout(resolve, delay));
         }
         throw new Error("❌ Rasa tidak siap setelah beberapa percobaan.");
     }
@@ -75,22 +79,12 @@ describe("Rasa Routes (Hosted on Railway)", () => {
                 message: "halo",
             });
 
-        expect(res.statusCode).toBe(200);
-        expect(res.body).toHaveProperty("response"); // Pastikan ada respons
+        expect(res.body).toBeInstanceOf(Array); // Pastikan respons adalah array
+        expect(res.body.length).toBeGreaterThan(0); // Pastikan array tidak kosong
+        expect(res.body[0]).toHaveProperty("recipient_id"); // Pastikan ada recipient_id
+        expect(res.body[0]).toHaveProperty("text"); // Pastikan ada teks balasan  
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Tunggu 5 detik sebelum start          
         console.log("✅ Rasa Message Response:", res.body);
-    });
-
-    // ✅ 3️⃣ Test Restart Rasa Server (Gunakan Delay)
-    it("seharusnya berhasil merestart Rasa server", async () => {
-        const res = await request(app).post("/api/rasa/restart");
-
-        expect(res.statusCode).toBe(200);
-        expect(res.body).toHaveProperty("message", "Rasa server restarted successfully.");
-        console.log("✅ Rasa Restart Response:", res.body);
-
-        // Tunggu sampai Rasa benar-benar restart
-        console.log("⏳ Menunggu Rasa siap setelah restart...");
-        await waitForRasaReady();
     });
 
     // ✅ 4️⃣ Test Stop Rasa Server

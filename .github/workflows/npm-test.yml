@@ -11,4 +11,4 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm test --detectOpenHandles -- Whitebox/Routes/authRoutes.test.js
+      - run: npm test
