@@ -21,7 +21,7 @@ router.post('/message', async (req, res) => {
             return res.status(400).send('Missing sender or message.');
         }
 
-        const rasaResponse = await axios.post(`${process.env.RAILWAY_STATIC_URL}/webhooks/rest/webhook`, {
+        const rasaResponse = await axios.post(`${process.env.RASA_URL}/webhooks/rest/webhook`, {
             sender,
             message,
         });
@@ -118,7 +118,7 @@ router.get('/status', async (req, res) => {
     const rasaProcess = getRasaProcess();
     if (rasaProcess) {
         try {
-            const response = await axios.get(`${process.env.RAILWAY_STATIC_URL}/status`, { timeout: 5000 }); // 5-second timeout
+            const response = await axios.get(`${process.env.RASA_URL}/status`, { timeout: 5000 }); // 5-second timeout
             if (response.data && response.data.model_file) {
                 return res.json({
                     running: true,
