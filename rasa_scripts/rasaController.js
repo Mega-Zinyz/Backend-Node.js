@@ -17,13 +17,6 @@ let rasaPID = null;
 let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 
-// Function untuk mendapatkan nama file log berdasarkan tanggal
-const getLogFileName = () => {
-    const date = new Date().toISOString().split('T')[0]; // Format YYYY-MM-DD
-    return `log_${date}.txt`; // Nama file berdasarkan tanggal
-};
-
-// Inisialisasi nama file log awal
 let lastLogFileName = getLogFileName();
 
 // Function untuk menulis log ke file dengan deteksi pergantian hari
