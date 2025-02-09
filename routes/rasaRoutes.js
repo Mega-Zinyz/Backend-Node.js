@@ -24,23 +24,22 @@ router.post('/message', async (req, res) => {
         const rasaResponse = await axios.post(`${process.env.RASA_URL}/webhooks/rest/webhook`, {
             sender,
             message,
+        }, {
+            timeout: 10000 // Adjust timeout if necessary
         });
-
-        // Check if the response includes actions
-        if (rasaResponse.data && rasaResponse.data.length > 0) {
-            const actions = rasaResponse.data.filter(msg => msg.custom_data); // Example check for action response
-            if (actions.length > 0) {
-                // Handle custom actions here, if needed
-                actions.forEach(action => {
-                    // Implement your custom action logic here (e.g., store data, trigger external API, etc.)
-                });
-            }
-        }
 
         res.json(rasaResponse.data);
     } catch (error) {
-        console.error('Error sending message to Rasa:', error);
-        res.status(500).send('Error communicating with Rasa server');
+        console.error('Error sending message to Rasa:', error.code, error.message, error.stack); // Log more details
+        if (error.code === 'ECONNRESET') {
+            res.status(500).send('Connection to Rasa server was reset.');
+        } else if (error.code === 'ECONNREFUSED') {
+            res.status(500).send('Connection refused by Rasa server.');
+        } else if (error.message.includes('timeout')) {
+            res.status(500).send('Timeout occurred while connecting to Rasa server.');
+        } else {
+            res.status(500).send('Error communicating with Rasa server.');
+        }
     }
 });
 
