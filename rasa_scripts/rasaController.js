@@ -255,13 +255,21 @@ const checkRasaReady = async () => {
                 isRasaLoading = false;
             }
         } catch (error) {
-            console.log(`Error checking Rasa status (attempt ${attempts}):`, error.response ? error.response.data : error.message);
+            console.info(`🔍 Attempt ${attempts}: Rasa status check failed. Retrying...`);
+            
+            if (error.response) {
+                console.warn(`⚠️ Response error:`, error.response.data);
+            } else {
+                console.warn(`⚠️ Network or other error:`, error.message);
+            }
+        
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
-                console.error('Failed to start Rasa server: Rasa server failed to start within the expected time.');
+                console.error('❌ Failed to start Rasa server: Rasa server did not start within the expected time.');
                 isRasaLoading = false;
             }
         }
+        
     }, checkInterval);
 };
 
