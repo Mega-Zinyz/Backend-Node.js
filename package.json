@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "test": "SET SQLALCHEMY_WARN_20=1 && SET SQLALCHEMY_SILENCE_UBER_WARNING=1 && jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "axios": "^1.7.9",
