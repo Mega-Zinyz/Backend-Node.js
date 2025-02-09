@@ -1,72 +1,70 @@
 const request = require('supertest');
 const app = require('../../server'); // Pastikan ini merujuk pada file Express utama
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs'); // Menggunakan bcryptjs sesuai dengan penggunaan di aplikasi utama
+const bcrypt = require('bcryptjs'); // Menggunakan bcryptjs sesuai dengan aplikasi utama
 require('dotenv').config(); // Pastikan .env dibaca
 
-// Mock user for testing
+// Mock database query
+jest.mock('../../db/db', () => ({
+  query: jest.fn()
+}));
+const db = require('../../db/db');
+
+// 🔹 Mock User Data
 const mockUser = {
   no_user: 1,
   username: 'zero',
-  password: 'zero123', // Password sebelum di-hash (untuk keperluan tes)
+  password: 'zero123', // Plain text sebelum di-hash
   profil_url: '1737788902962.jpg'
 };
 
 // Hash the password before using it in the mock
 const hashedPassword = bcrypt.hashSync(mockUser.password, 10);
 
-// Log untuk melihat password asli dan password yang sudah di-hash
+// Log password untuk debugging
 console.log('Original Password:', mockUser.password);
 console.log('Hashed Password:', hashedPassword);
 
-// Mock database query
-jest.mock('../../db/db', () => ({
-  query: jest.fn()
-}));
-
-const db = require('../../db/db');
-
-// Mock environment variables directly in tests
-const JWT_SECRET = process.env.JWT_SECRET;
-const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
-
 describe('Auth Routes', () => {
-  let accessToken, refreshToken;
   let server;
+  let accessToken, refreshToken;
 
+  // 🔹 Jalankan server sebelum test
   beforeAll(() => {
-    // Pastikan .env dibaca dengan benar
+    server = app.listen(0); // Gunakan port dinamis agar tidak bentrok
     console.log('JWT_SECRET in test:', process.env.JWT_SECRET);
     console.log('REFRESH_TOKEN_SECRET in test:', process.env.REFRESH_TOKEN_SECRET);
+
     if (!process.env.JWT_SECRET || !process.env.REFRESH_TOKEN_SECRET) {
       throw new Error('Missing JWT_SECRET or REFRESH_TOKEN_SECRET');
     }
   });
 
+  // 🔹 Bersihkan mock setelah setiap test
   afterEach(() => {
-    jest.clearAllMocks(); // Clear mocks setelah setiap test
+    jest.clearAllMocks();
   });
 
-  afterAll((done) => {
+  // 🔹 Tutup server dan database setelah semua test selesai
+  afterAll(async () => {
     if (server) {
-      server.close(done); // Pastikan server ditutup setelah pengujian selesai
-    } else {
-      done(); // Ensure the callback is called if there's no server to close
+      server.close();
     }
-  }, 10000); // Increased timeout to 10 seconds
-  
+    if (db.end) {
+      await db.end();
+    }
+  });
 
-  // 1️⃣ Test Login
+  jest.setTimeout(10000); // Timeout 10 detik untuk setiap test
+
+  // ✅ 1️⃣ Test Login Berhasil
   it('seharusnya login berhasil dengan kredensial yang valid', async () => {
     // Mock database response dengan password yang sudah di-hash
-    db.query.mockResolvedValueOnce([[{
-      ...mockUser,
-      password: hashedPassword // Gunakan password yang sudah di-hash
-    }]]);
+    db.query.mockResolvedValueOnce([[{ ...mockUser, password: hashedPassword }]]);
 
     const res = await request(app)
       .post('/api/auth/login')
-      .send({ username: 'zero', password: 'zero123' }); // Password dalam bentuk plain text
+      .send({ username: 'zero', password: 'zero123' });
 
     // Verifikasi respons
     expect(res.statusCode).toBe(200);
@@ -81,24 +79,22 @@ describe('Auth Routes', () => {
     console.log('Refresh Token:', refreshToken);
   });
 
+  // ✅ 2️⃣ Test Login Gagal
   it('seharusnya gagal login dengan kredensial yang tidak valid', async () => {
-    // Mock user not found
-    db.query.mockResolvedValueOnce([]);
+    db.query.mockResolvedValueOnce([]); // Pastikan mengembalikan array kosong jika user tidak ditemukan
 
     const res = await request(app)
       .post('/api/auth/login')
       .send({ username: 'wronguser', password: 'wrongpass' });
 
-    // Verifikasi respons
     expect(res.statusCode).toBe(401);
     expect(res.body.error).toBe('Username not found');
 
     console.log('Login Failure Response:', res.body);
   });
 
-  // 2️⃣ Test Refresh Token
+  // ✅ 3️⃣ Test Refresh Token
   it('seharusnya berhasil merefresh token akses', async () => {
-    // Ensure the login test has been completed and refreshToken is set
     if (!refreshToken) {
       throw new Error('Refresh token is missing. Ensure login test passes first.');
     }
@@ -107,24 +103,24 @@ describe('Auth Routes', () => {
       .post('/api/auth/refresh')
       .send({ refreshToken });
 
-    // Verify the response
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveProperty('accessToken');
+
     console.log('Refreshed Access Token:', res.body.accessToken);
   });
 
-  it('should fail refresh with invalid token', async () => {
+  it('seharusnya gagal refresh dengan token tidak valid', async () => {
     const res = await request(app)
       .post('/api/auth/refresh')
       .send({ refreshToken: 'invalidtoken' });
 
-    // Verifikasi respons
     expect(res.statusCode).toBe(403);
     expect(res.body.error).toBe('Refresh token is invalid or missing');
+
     console.log('Refresh Failure Response:', res.body);
   });
 
-  // 3️⃣ Test Protected Route
+  // ✅ 4️⃣ Test Protected Route
   it('seharusnya dapat mengakses rute terenkripsi dengan token yang valid', async () => {
     const validAccessToken = jwt.sign(
       { no_user: 1, username: 'zero' },
@@ -135,7 +131,6 @@ describe('Auth Routes', () => {
       .get('/api/auth/protected')
       .set('Authorization', `Bearer ${validAccessToken}`);
 
-    // Verifikasi respons
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe('This is a protected route!');
     console.log('Protected Route Access Response:', res.body);
@@ -143,27 +138,27 @@ describe('Auth Routes', () => {
 
   it('seharusnya gagal mengakses rute terenkripsi tanpa token', async () => {
     const res = await request(app)
-      .get('/api/auth/protected'); // Pastikan endpointnya benar
+      .get('/api/auth/protected');
 
-    // Verifikasi respons
     expect(res.statusCode).toBe(401);
     expect(res.body.error).toBe('Authorization header is missing');
+
     console.log('Protected Route Failure Response:', res.body);
   });
 
-  // 4️⃣ Test Logout
+  // ✅ 5️⃣ Test Logout
   it('seharusnya logout berhasil', async () => {
     const res = await request(app)
       .post('/api/auth/logout')
       .send({ refreshToken });
 
-    // Verifikasi respons
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe('Successfully logged out');
+
     console.log('Logout Response:', res.body);
   });
 
-  // 5️⃣ Test JWT Signing and Verification
+  // ✅ 6️⃣ Test JWT Signing and Verification
   it('seharusnya dapat menandatangani dan memverifikasi JWT dengan benar', () => {
     const payload = { no_user: 1, username: 'zero' };
 
@@ -175,9 +170,4 @@ describe('Auth Routes', () => {
     expect(decoded.username).toBe('zero');
   });
 
-  afterAll(async () => {
-    if (db.end) {
-      await db.end(); // Hanya jalankan jika `db.end` tersedia (untuk koneksi database nyata)
-    }
-  });
 });

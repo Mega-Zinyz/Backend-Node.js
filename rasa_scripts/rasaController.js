@@ -196,11 +196,19 @@ const startRasa = async () => {
             rasaProcess = null;
         });
 
+        const isTestEnv = process.env.NODE_ENV === 'test';
+
         rasaProcess.stderr.on('data', (data) => {
             const logData = `Rasa : ${data.toString()}`;
-            console.log(logData);
+        
+            // 🔹 Cegah logging jika sedang dalam mode test
+            if (!isTestEnv) {
+                console.log(logData);
+            }
+        
             writeLogToFile(logData);
         });
+        
 
         await checkRasaReady();
         await startActionServer();
@@ -258,28 +266,39 @@ const checkRasaReady = async () => {
     let attempts = 0;
     const maxAttempts = 30;
     const checkInterval = 5000;
+    let lastLogAttempt = 0;
+    let lastStatus = null; // Menyimpan status terakhir
 
     const interval = setInterval(async () => {
         attempts++;
         try {
             const response = await axios.get(`${rasaUrl}/status`);
-            
+
             if (response.data && response.data.model_file) {
                 clearInterval(interval);
                 console.log('✅ Rasa server is online.');
                 isRasaLoading = false;
-            } else if (attempts % 5 === 0) { // Log hanya setiap 5 percobaan
-                console.info(`ℹ️ Rasa server is running but model is not ready (attempt ${attempts}/${maxAttempts})`);
-            }
-        } catch (error) {
-            if (attempts % 5 === 0) { // Hanya log setiap 5 percobaan
-                console.warn(`⚠️ No response from Rasa server (attempt ${attempts}/${maxAttempts}). Retrying...`);
+                return;
             }
 
+            // Cek apakah status berubah sejak terakhir dicetak
+            if (attempts % 5 === 0 && lastStatus !== "waiting") {
+                console.info(`ℹ️ Rasa server is running but model is not ready (attempt ${attempts}/${maxAttempts})`);
+                lastStatus = "waiting"; // Simpan status terakhir
+            }
+        } catch (error) {
+            // Jika error terjadi setelah batas maksimum, cetak error
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
                 console.error('❌ Failed to start Rasa server: No response received after maximum attempts.');
                 isRasaLoading = false;
+                return;
+            }
+
+            // Hanya cetak log setiap 5 percobaan jika status berubah
+            if (attempts % 5 === 0 && lastStatus !== "no-response") {
+                console.warn(`⚠️ No response from Rasa server (attempt ${attempts}/${maxAttempts}). Retrying...`);
+                lastStatus = "no-response"; // Simpan status terakhir
             }
         }
     }, checkInterval);
