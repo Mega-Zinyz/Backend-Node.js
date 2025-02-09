@@ -11,4 +11,4 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm test -- tests/authRoutes.test.js
+      - run: npm test -- Whitebox/Routes/authRoutes.test.js
