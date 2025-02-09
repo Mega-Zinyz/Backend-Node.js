@@ -183,7 +183,7 @@ const startRasa = async () => {
 
         rasaProcess.stderr.on('data', (data) => {
             const logData = `Rasa : ${data.toString()}`;
-            console.error(logData);
+            console.log(logData);
             writeLogToFile(logData);
         });
 
@@ -231,7 +231,7 @@ const startActionServer = async () => {
 
         actionProcess.stderr.on('data', (data) => {
             const logData = `Rasa Action : ${data.toString()}`;
-            console.error(logData);
+            console.log(logData);
             writeLogToFile(logData);
         });
     } catch (error) {
@@ -255,7 +255,7 @@ const checkRasaReady = async () => {
                 isRasaLoading = false;
             }
         } catch (error) {
-            console.error(`Error checking Rasa status (attempt ${attempts}):`, error.response ? error.response.data : error.message);
+            console.log(`Error checking Rasa status (attempt ${attempts}):`, error.response ? error.response.data : error.message);
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
                 console.error('Failed to start Rasa server: Rasa server failed to start within the expected time.');
