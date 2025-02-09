@@ -16,16 +16,38 @@ let isRasaLoading = false;  // Flag to indicate if Rasa is starting or stopping
 let rasaPID = null;
 let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
+
+// Function untuk mendapatkan nama file log berdasarkan tanggal
+const getLogFileName = () => {
+    const date = new Date().toISOString().split('T')[0]; // Format YYYY-MM-DD
+    return `log_${date}.txt`; // Nama file berdasarkan tanggal
+};
+
+// Inisialisasi nama file log awal
 let lastLogFileName = getLogFileName();
 
-// Function to write log data to a file
+// Function untuk menulis log ke file dengan deteksi pergantian hari
 const writeLogToFile = (data) => {
     const currentLogFileName = getLogFileName();
-    const currentLogFilePath = path.join(__dirname, '..', 'Rasa', 'log', currentLogFileName);
-    fs.appendFile(currentLogFilePath, data, (err) => {
-        if (err) console.error('Error writing to log file:', err);
+    
+    // Jika hari berganti, update nama file log
+    if (currentLogFileName !== lastLogFileName) {
+        console.log(`📅 Hari berganti! Menggunakan log baru: ${currentLogFileName}`);
+        lastLogFileName = currentLogFileName;
+    }
+
+    // Path file log yang akan digunakan
+    const logFilePath = path.join(__dirname, '..', 'Rasa', 'log', currentLogFileName);
+
+    // Pastikan file log baru tersedia sebelum menulis data
+    fs.writeFileSync(logFilePath, '', { flag: 'a' }); 
+
+    // Append data ke file log
+    fs.appendFile(logFilePath, data + '\n', (err) => {
+        if (err) console.error('❌ Error menulis ke file log:', err);
     });
 };
+
 
 // Fungsi untuk mendapatkan model terbaru berdasarkan nama file (tanggal dalam nama file)
 const getLatestModel = () => {
