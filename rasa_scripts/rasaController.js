@@ -248,14 +248,26 @@ const checkRasaReady = async () => {
         attempts++;
         try {
             const response = await axios.get(`${rasaUrl}/status`);
-            console.log('Response data:', response.data); 
+            
             if (response.data && response.data.model_file) {
                 clearInterval(interval);
                 console.log('✅ Rasa server is online.');
                 isRasaLoading = false;
+            } else {
+                console.info(`ℹ️ Rasa server is running but model is not ready (attempt ${attempts}/${maxAttempts})`);
             }
-        } catch (log) {
-            console.warn(`⚠️ Warning: Rasa server is not ready yet (attempt ${attempts}):`, log.response ? log.response.data : log.message);
+        } catch (error) {
+            if (error.response) {
+                // Server merespons dengan kode status di luar 2xx
+                console.warn(`⚠️ Warning: Rasa server responded with an error (attempt ${attempts}/${maxAttempts}):`, error.response.data);
+            } else if (error.request) {
+                // Permintaan dikirim tetapi tidak ada respons (misalnya server mati)
+                console.error(`❌ Error: No response from Rasa server (attempt ${attempts}/${maxAttempts}).`);
+            } else {
+                // Kesalahan lain (misalnya kesalahan konfigurasi)
+                console.error(`❌ Unexpected error while checking Rasa status:`, error.message);
+            }
+
             if (attempts >= maxAttempts) {
                 clearInterval(interval);
                 console.error('❌ Failed to start Rasa server: Rasa server did not start within the expected time.');
