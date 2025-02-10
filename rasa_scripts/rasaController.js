@@ -20,12 +20,11 @@ const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 // Fungsi untuk menulis log ke MySQL
 const writeLogToDatabase = async (logLevel, message) => {
     try {
-        // Ensure message is not null or undefined
         if (!message || message.trim() === '') {
-            throw new Error('Message cannot be null or empty');
+            console.warn('Skipping log entry: message is empty.');
+            return;
         }
 
-        // Insert log into database
         const query = 'INSERT INTO rasa_logs (log_level, message) VALUES (?, ?)';
         await db.query(query, [logLevel, message]);
 
