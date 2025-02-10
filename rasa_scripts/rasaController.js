@@ -18,55 +18,53 @@ let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 
 // Fungsi untuk menulis log ke MySQL
-const writeLogToDatabase = (level, message) => {
-    const logQuery = 'INSERT INTO rasa_logs (log_level, message) VALUES (?, ?)';
-    
-    db.query(logQuery, [level, message], (err, result) => {
-      if (err) {
-        console.error('❌ Error writing log to MySQL:', err);
-      } else {
-        console.log('✅ Log saved to MySQL:', result.insertId);
-      }
-    });
-  };
+const writeLogToDatabase = async (logLevel, message) => {
+    try {
+        // Ensure message is not null or undefined
+        if (!message || message.trim() === '') {
+            throw new Error('Message cannot be null or empty');
+        }
 
+        // Insert log into database
+        const query = 'INSERT INTO rasa_logs (log_level, message) VALUES (?, ?)';
+        await db.query(query, [logLevel, message]);
 
-// Fungsi untuk mendapatkan model terbaru berdasarkan nama file (tanggal dalam nama file)
-const getLatestModel = () => {
-    // Pastikan direktori model ada
-    if (!fs.existsSync(modelsDir)) throw new Error('Model directory does not exist');
-
-    // Ambil semua file dengan ekstensi .tar.gz
-    const files = fs.readdirSync(modelsDir).filter(file => file.endsWith('.tar.gz'));
-
-    // Jika tidak ada file model, lempar error
-    if (files.length === 0) throw new Error('No model files found in the directory');
-
-    // Menampilkan semua model yang ditemukan
-    console.log('Daftar model yang ditemukan:');
-    files.forEach((file, index) => {
-        console.log(`${index + 1}: ${file}`);
-    });
-
-    // Mengurutkan file berdasarkan tanggal yang ada di nama file (format: YYYYMMDD-HHMMSS)
-    const latestModel = files.sort((a, b) => {
-        // Parse tanggal dengan lebih baik menggunakan format YYYYMMDD-HHMMSS
-        const dateA = new Date(a.slice(0, 4), a.slice(4, 6) - 1, a.slice(6, 8), a.slice(9, 11), a.slice(11, 13), a.slice(13, 15));
-        const dateB = new Date(b.slice(0, 4), b.slice(4, 6) - 1, b.slice(6, 8), b.slice(9, 11), b.slice(11, 13), b.slice(13, 15));
-        return dateB - dateA; // Urutkan dari yang terbaru
-    })[0];
-
-    // Kembalikan path lengkap ke model terbaru
-    return path.join(modelsDir, latestModel);
+    } catch (error) {
+        console.error('Error writing log to database:', error.message);
+    }
 };
 
-// Contoh pemanggilan fungsi
-try {
-    const latestModel = getLatestModel();
-    console.log('Model terbaru:', latestModel);
-} catch (error) {
-    console.error(error.message);
-}
+// Function to get the latest model safely
+const getLatestModel = () => {
+    try {
+        // Pastikan direktori model ada
+        if (!fs.existsSync(modelsDir)) {
+            throw new Error('Model directory does not exist');
+        }
+
+        // Ambil semua file dengan ekstensi .tar.gz
+        const files = fs.readdirSync(modelsDir).filter(file => file.endsWith('.tar.gz'));
+
+        // Jika tidak ada file model, lempar error
+        if (files.length === 0) {
+            throw new Error('No model files found in the directory');
+        }
+
+        // Mengurutkan file berdasarkan tanggal yang ada di nama file (format: YYYYMMDD-HHMMSS)
+        const latestModel = files.sort((a, b) => {
+            const dateA = new Date(a.slice(0, 4), a.slice(4, 6) - 1, a.slice(6, 8), a.slice(9, 11), a.slice(11, 13), a.slice(13, 15));
+            const dateB = new Date(b.slice(0, 4), b.slice(4, 6) - 1, b.slice(6, 8), b.slice(9, 11), b.slice(11, 13), b.slice(13, 15));
+            return dateB - dateA; // Urutkan dari yang terbaru
+        })[0];
+
+        // Kembalikan path lengkap ke model terbaru
+        return path.join(modelsDir, latestModel);
+
+    } catch (error) {
+        console.error('Error getting latest model:', error.message);
+        throw error;  // Rethrow so it can be handled higher up
+    }
+};
 
 // Function to check if a port is in use
 const isPortInUse = async (port) => {
@@ -134,6 +132,7 @@ const killProcessOnPort = async (port) => {
     }
 };
 
+// Improved startRasa function
 const startRasa = async () => {
     if (isRasaRunning || isRasaLoading) {
         console.log("Rasa server is already running or loading.");
@@ -141,7 +140,7 @@ const startRasa = async () => {
     }
 
     const port = process.env.RASA_PORT;
-    console.log(`Checking if port ${port} is available...`); // Tambahkan ini
+    console.log(`Checking if port ${port} is available...`);
 
     const inUse = await isPortInUse(port);
     if (inUse) {
@@ -156,16 +155,25 @@ const startRasa = async () => {
     }
 
     isRasaLoading = true;
-    const latestModel = getLatestModel();
-    console.log(`Starting Rasa server on port ${port} with model: ${latestModel}`); // Tambahkan ini
-    writeLogToDatabase(`Starting Rasa server on port ${port} with model: ${latestModel}\n`);
+    let latestModel;
+
+    try {
+        latestModel = getLatestModel();
+        console.log(`Starting Rasa server on port ${port} with model: ${latestModel}`);
+        // Call to writeLogToDatabase safely
+        await writeLogToDatabase('info', `Starting Rasa server on port ${port} with model: ${latestModel}\n`);
+    } catch (error) {
+        console.error(`Failed to get the latest model: ${error.message}`);
+        isRasaLoading = false;
+        return;  // Exit if there's an error retrieving the model
+    }
 
     try {
         rasaProcess = spawn('python', [
-            '-m', 'rasa', 'run', 
-            '--model', latestModel, 
-            '--enable-api', 
-            '--port', port, // Pastikan port disebutkan di sini
+            '-m', 'rasa', 'run',
+            '--model', latestModel,
+            '--enable-api',
+            '--port', port, // Ensure port is specified here
             '--endpoints', path.join(__dirname, '..', 'Rasa', 'endpoints.yml')
         ], {
             shell: true,
@@ -175,35 +183,27 @@ const startRasa = async () => {
         rasaPID = rasaProcess.pid;
         isRasaRunning = true;
         console.log(`Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}`);
-        writeLogToDatabase(`Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}\n`);
+        await writeLogToDatabase('info', `Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}\n`);
 
         rasaProcess.on('exit', (code, signal) => {
             console.log(`Rasa process exited with code ${code}, signal ${signal}`);
-            writeLogToDatabase(`Rasa server exited with code ${code}, signal ${signal}\n`);
+            writeLogToDatabase('error', `Rasa server exited with code ${code}, signal ${signal}\n`);
             isRasaRunning = false;
             isRasaLoading = false;
             rasaProcess = null;
         });
 
-        const isTestEnv = process.env.NODE_ENV === 'test';
-
         rasaProcess.stderr.on('data', (data) => {
             const logData = `Rasa : ${data.toString()}`;
-        
-            // 🔹 Cegah logging jika sedang dalam mode test
-            if (!isTestEnv) {
-                console.log(logData);
-            }
-        
-            writeLogToDatabase(logData);
+            writeLogToDatabase('error', logData);  // Log errors as 'error' level
+            console.log(logData);
         });
-        
 
         await checkRasaReady();
         await startActionServer();
     } catch (error) {
         console.error(`Failed to start Rasa server: ${error.message}`);
-        writeLogToDatabase(`Failed to start Rasa server: ${error.message}\n`);
+        writeLogToDatabase('error', `Failed to start Rasa server: ${error.message}\n`);
         isRasaRunning = false;
         isRasaLoading = false;
         rasaProcess = null;
@@ -221,7 +221,7 @@ const startActionServer = async () => {
         const pythonPath = path.join(__dirname, '..', 'Rasa');
 
         // Inisialisasi actionProcess sebelum menggunakan actionProcess.pid
-        const actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
+        actionProcess = spawn('python', ['-m', 'rasa', 'run', 'actions'], {
             shell: true,
             cwd: cwdPath,
             env: { 
@@ -229,7 +229,7 @@ const startActionServer = async () => {
                 PYTHONPATH: pythonPath,
             },
             stdio: ['ignore', 'pipe', 'pipe'],
-        });
+        });        
 
         actionServerPID = actionProcess.pid; // Sekarang actionProcess.pid dapat diakses
         isActionServerRunning = true;
