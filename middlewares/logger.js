@@ -1,5 +1,5 @@
-// logger.js
 const { createLogger, transports, format } = require('winston');
+const fs = require('fs');
 const db = require('../db/db');  // Import pool koneksi database yang sudah ada
 
 // Fungsi untuk menulis log ke MySQL
