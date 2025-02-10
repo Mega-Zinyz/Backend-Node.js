@@ -1,6 +1,6 @@
 // logger.js
 const { createLogger, transports, format } = require('winston');
-const db = require('./db/db');  // Import pool koneksi database yang sudah ada
+const db = require('../db/db');  // Import pool koneksi database yang sudah ada
 
 // Fungsi untuk menulis log ke MySQL
 const logToMySQL = async (level, message) => {

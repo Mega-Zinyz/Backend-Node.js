@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const { logger } = require('./middlewares/logger');  // Import logger yang sudah dimodifikasi
+const db = require('./db/db');
 require('dotenv').config();
 
 // Import route modules
