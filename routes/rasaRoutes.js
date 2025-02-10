@@ -81,7 +81,7 @@ router.get('/logs/today', async (req, res) => {
     const day = String(today.getDate()).padStart(2, '0');
     const todayDate = `${year}-${month}-${day}`;
 
-    const query = 'SELECT * FROM node_logs WHERE DATE(timestamp) = ? ORDER BY timestamp DESC';
+    const query = 'SELECT * FROM rasa_logs WHERE DATE(timestamp) = ? ORDER BY timestamp DESC';
 
     try {
         const [results] = await db.query(query, [todayDate]);

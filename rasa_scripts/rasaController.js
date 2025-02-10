@@ -6,6 +6,7 @@ const fs = require('fs');
 const net = require('net');
 const axios = require('axios');
 const rasaUrl = process.env.RASA_URL;
+const db = require('../db/db');
 
 let rasaProcess = null;
 let actionProcess = null;
