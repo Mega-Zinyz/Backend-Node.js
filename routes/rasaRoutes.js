@@ -3,14 +3,11 @@ const { startRasa, stopRasa, restartRasa, getRasaProcess } = require('../rasa_sc
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
+const db = require('../db/db');
 
 const router = express.Router();
 
 require('dotenv').config();
-
-// Define the log directory paths
-const logDirectory = process.env.LOG_DIR || path.join(__dirname, '../logs');
-const logDirectoryToday = process.env.LOG_TODAY_DIR || path.join(__dirname, '../Rasa/log');
 
 // Route to send messages to Rasa
 router.post('/message', async (req, res) => {
@@ -77,47 +74,48 @@ router.post('/restart', async (req, res) => {
 });
 
 // Route for fetching today's Rasa logs from database
-router.get('/logs/today', (req, res) => {
+router.get('/logs/today', async (req, res) => {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     const todayDate = `${year}-${month}-${day}`;
 
-    const query = 'SELECT * FROM logs WHERE DATE(timestamp) = ? ORDER BY timestamp DESC';
+    const query = 'SELECT * FROM node_logs WHERE DATE(timestamp) = ? ORDER BY timestamp DESC';
 
-    dbConnection.query(query, [todayDate], (err, results) => {
-        if (err) {
-            console.error(`Error fetching logs for today: ${err.message}`);
-            return res.status(500).send(`Error fetching logs: ${err.message}`);
-        }
+    try {
+        const [results] = await db.query(query, [todayDate]);
 
-        // Jika tidak ada log hari ini, beri respons yang sesuai
+        // If no logs found for today
         if (results.length === 0) {
             return res.status(404).send(`No logs found for today (${todayDate}).`);
         }
 
-        // Kirimkan hasil log dalam format JSON
+        // Send the results as JSON
         return res.json(results);
-    });
+    } catch (err) {
+        console.error(`Error fetching logs for today: ${err.message}`);
+        return res.status(500).send(`Error fetching logs: ${err.message}`);
+    }
 });
 
-// Route for fetching general Rasa logs
-router.get('/logs/general', (req, res) => {
-    const today = new Date();
+// Route for fetching general Rasa logs from the database
+router.get('/logs/general', async (req, res) => {
+    try {
+        const query = 'SELECT * FROM node_logs ORDER BY timestamp DESC LIMIT 100';  // Fetch the most recent 100 logs (you can adjust this as needed)
+        const [results] = await db.query(query);  // Using the `db` pool from the connection
 
-    // Define the general log path
-    const currentLogPath = path.join(logDirectory, `server-${today.toISOString().split('T')[0]}.log`);
-
-    // Try reading the log from the general log directory
-    fs.readFile(currentLogPath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Log file from default directory not found:', err.message);
-            return res.status(404).send('No general log file found for today.');
-        } else {
-            return res.send(data); // Send general log
+        // If no logs are found, return a 404
+        if (results.length === 0) {
+            return res.status(404).send('No general logs found.');
         }
-    });
+
+        // Send the results as a JSON response
+        return res.json(results);
+    } catch (err) {
+        console.error('Error fetching general logs:', err.message);
+        return res.status(500).send(`Error fetching logs: ${err.message}`);
+    }
 });
 
 // Route to get the status of Rasa
