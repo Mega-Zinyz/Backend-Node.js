@@ -15,7 +15,7 @@ const logToMySQL = async (level, message) => {
 };
 
 // Custom transport untuk Winston (menyimpan log ke MySQL)
-class MySQLTransport extends transports.Stream {
+class MySQLTransport extends transports.Console {
     constructor(opts) {
         super(opts);
     }
@@ -26,7 +26,8 @@ class MySQLTransport extends transports.Stream {
         // Menyimpan log ke MySQL
         logToMySQL(info.level, info.message);
 
-        callback();
+        // Jika Anda ingin tetap log ke console
+        super.log(info, callback);
     }
 }
 
