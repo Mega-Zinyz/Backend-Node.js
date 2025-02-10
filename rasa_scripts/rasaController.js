@@ -5,7 +5,6 @@ const path = require('path');
 const fs = require('fs');
 const net = require('net');
 const axios = require('axios');
-const { getLogFileName } = require('../constants/constants');
 const rasaUrl = process.env.RASA_URL;
 
 let rasaProcess = null;
@@ -17,29 +16,18 @@ let rasaPID = null;
 let actionServerPID = null;
 const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 
-let lastLogFileName = getLogFileName();
-
-// Function untuk menulis log ke file dengan deteksi pergantian hari
-const writeLogToFile = (data) => {
-    const currentLogFileName = getLogFileName();
+// Fungsi untuk menulis log ke MySQL
+const writeLogToDatabase = (level, message) => {
+    const logQuery = 'INSERT INTO rasa_logs (log_level, message) VALUES (?, ?)';
     
-    // Jika hari berganti, update nama file log
-    if (currentLogFileName !== lastLogFileName) {
-        console.log(`📅 Hari berganti! Menggunakan log baru: ${currentLogFileName}`);
-        lastLogFileName = currentLogFileName;
-    }
-
-    // Path file log yang akan digunakan
-    const logFilePath = path.join(__dirname, '..', 'Rasa', 'log', currentLogFileName);
-
-    // Pastikan file log baru tersedia sebelum menulis data
-    fs.writeFileSync(logFilePath, '', { flag: 'a' }); 
-
-    // Append data ke file log
-    fs.appendFile(logFilePath, data + '\n', (err) => {
-        if (err) console.error('❌ Error menulis ke file log:', err);
+    dbConnection.query(logQuery, [level, message], (err, result) => {
+      if (err) {
+        console.error('❌ Error writing log to MySQL:', err);
+      } else {
+        console.log('✅ Log saved to MySQL:', result.insertId);
+      }
     });
-};
+  };
 
 
 // Fungsi untuk mendapatkan model terbaru berdasarkan nama file (tanggal dalam nama file)
@@ -169,7 +157,7 @@ const startRasa = async () => {
     isRasaLoading = true;
     const latestModel = getLatestModel();
     console.log(`Starting Rasa server on port ${port} with model: ${latestModel}`); // Tambahkan ini
-    writeLogToFile(`Starting Rasa server on port ${port} with model: ${latestModel}\n`);
+    writeLogToDatabase(`Starting Rasa server on port ${port} with model: ${latestModel}\n`);
 
     try {
         rasaProcess = spawn('python', [
@@ -186,11 +174,11 @@ const startRasa = async () => {
         rasaPID = rasaProcess.pid;
         isRasaRunning = true;
         console.log(`Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}`);
-        writeLogToFile(`Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}\n`);
+        writeLogToDatabase(`Rasa server started successfully on port ${port} with PID: ${rasaProcess.pid}\n`);
 
         rasaProcess.on('exit', (code, signal) => {
             console.log(`Rasa process exited with code ${code}, signal ${signal}`);
-            writeLogToFile(`Rasa server exited with code ${code}, signal ${signal}\n`);
+            writeLogToDatabase(`Rasa server exited with code ${code}, signal ${signal}\n`);
             isRasaRunning = false;
             isRasaLoading = false;
             rasaProcess = null;
@@ -206,7 +194,7 @@ const startRasa = async () => {
                 console.log(logData);
             }
         
-            writeLogToFile(logData);
+            writeLogToDatabase(logData);
         });
         
 
@@ -214,7 +202,7 @@ const startRasa = async () => {
         await startActionServer();
     } catch (error) {
         console.error(`Failed to start Rasa server: ${error.message}`);
-        writeLogToFile(`Failed to start Rasa server: ${error.message}\n`);
+        writeLogToDatabase(`Failed to start Rasa server: ${error.message}\n`);
         isRasaRunning = false;
         isRasaLoading = false;
         rasaProcess = null;
@@ -255,7 +243,7 @@ const startActionServer = async () => {
         actionProcess.stderr.on('data', (data) => {
             const logData = `Rasa Action : ${data.toString()}`;
             console.log(logData);
-            writeLogToFile(logData);
+            writeLogToDatabase(logData);
         });
     } catch (error) {
         console.error(`Failed to start Rasa action server: ${error.message}`);

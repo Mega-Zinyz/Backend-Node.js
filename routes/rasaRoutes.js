@@ -76,21 +76,29 @@ router.post('/restart', async (req, res) => {
     }
 });
 
-// Route for fetching today's Rasa logs
+// Route for fetching today's Rasa logs from database
 router.get('/logs/today', (req, res) => {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
-    const currentLogPathToday = path.join(logDirectoryToday, `log_${year}-${month}-${day}.txt`);
+    const todayDate = `${year}-${month}-${day}`;
 
-    fs.readFile(currentLogPathToday, 'utf8', (err, data) => {
+    const query = 'SELECT * FROM logs WHERE DATE(timestamp) = ? ORDER BY timestamp DESC';
+
+    dbConnection.query(query, [todayDate], (err, results) => {
         if (err) {
-            console.error(`Log file not found: ${currentLogPathToday}. Error: ${err.message}`);
-            return res.status(404).send(`No log file found for today at ${currentLogPathToday}.`);
-        } else {
-            return res.send(data);
+            console.error(`Error fetching logs for today: ${err.message}`);
+            return res.status(500).send(`Error fetching logs: ${err.message}`);
         }
+
+        // Jika tidak ada log hari ini, beri respons yang sesuai
+        if (results.length === 0) {
+            return res.status(404).send(`No logs found for today (${todayDate}).`);
+        }
+
+        // Kirimkan hasil log dalam format JSON
+        return res.json(results);
     });
 });
 
