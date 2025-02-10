@@ -20,7 +20,7 @@ const modelsDir = path.join(__dirname, '..', 'Rasa', 'models');
 const writeLogToDatabase = (level, message) => {
     const logQuery = 'INSERT INTO rasa_logs (log_level, message) VALUES (?, ?)';
     
-    dbConnection.query(logQuery, [level, message], (err, result) => {
+    db.query(logQuery, [level, message], (err, result) => {
       if (err) {
         console.error('❌ Error writing log to MySQL:', err);
       } else {
